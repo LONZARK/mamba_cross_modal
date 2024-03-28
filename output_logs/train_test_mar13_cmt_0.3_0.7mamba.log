@@ -1,0 +1,1264 @@
+CUDA extension for cauchy multiplication not found. Install by going to extensions/cauchy/ and running `python setup.py install`. This should speed up end-to-end training by 10-50%
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/nn/modules/transformer.py:282: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.self_attn.batch_first was not True(use batch_first for better inference performance)
+  warnings.warn(f"enable_nested_tensor is True, but self.use_nested_tensor is False because {why_not_sparsity_fast_path}")
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/nn/functional.py:1352: UserWarning: dropout2d: Received a 3D input to dropout2d and assuming that channel-wise 1D dropout behavior is desired - input is interpreted as shape (N, C, L), where C is the channel dim. This behavior will change in a future release to interpret the input as one without a batch dimension, i.e. shape (C, H, W). To maintain the 1D channel-wise dropout behavior, please switch to using dropout1d instead.
+  warnings.warn("dropout2d: Received a 3D input to dropout2d and assuming that channel-wise "
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:149: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Train Epoch: 1 [0/10000 (0%)]	Loss: 2.119911
+Train Epoch: 1 [800/10000 (8%)]	Loss: 0.734031
+Train Epoch: 1 [1600/10000 (16%)]	Loss: 0.766500
+Train Epoch: 1 [2400/10000 (24%)]	Loss: 0.683820
+Train Epoch: 1 [3200/10000 (32%)]	Loss: 0.645790
+Train Epoch: 1 [4000/10000 (40%)]	Loss: 0.512708
+Train Epoch: 1 [4800/10000 (48%)]	Loss: 0.471407
+Train Epoch: 1 [5600/10000 (56%)]	Loss: 0.427167
+Train Epoch: 1 [6400/10000 (64%)]	Loss: 0.574591
+Train Epoch: 1 [7200/10000 (72%)]	Loss: 0.441363
+Train Epoch: 1 [8000/10000 (80%)]	Loss: 0.451213
+Train Epoch: 1 [8800/10000 (88%)]	Loss: 0.412049
+Train Epoch: 1 [9600/10000 (96%)]	Loss: 0.508108
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/nn/functional.py:1352: UserWarning: dropout2d: Received a 3D input to dropout2d and assuming that channel-wise 1D dropout behavior is desired - input is interpreted as shape (N, C, L), where C is the channel dim. This behavior will change in a future release to interpret the input as one without a batch dimension, i.e. shape (C, H, W). To maintain the 1D channel-wise dropout behavior, please switch to using dropout1d instead.
+  warnings.warn("dropout2d: Received a 3D input to dropout2d and assuming that channel-wise "
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:84: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_a = df_a.loc[df_a['filename'] == df.iloc[batch_idx, :][0]]
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:100: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_v = df_v.loc[df_v['filename'] == df.iloc[batch_idx, :][0]]
+Audio Event Detection Segment-level F1: 40.2
+Visual Event Detection Segment-level F1: 42.5
+Audio-Visual Event Detection Segment-level F1: 34.8
+Segment-levelType@Avg. F1: 39.2
+Segment-level Event@Avg. F1: 40.4
+Audio Event Detection Event-level F1: 34.1
+Visual Event Detection Event-level F1: 39.7
+Audio-Visual Event Detection Event-level F1: 30.9
+Event-level Type@Avg. F1: 34.9
+Event-level Event@Avg. F1: 34.7
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:149: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Train Epoch: 2 [0/10000 (0%)]	Loss: 0.399475
+Train Epoch: 2 [800/10000 (8%)]	Loss: 0.478792
+Train Epoch: 2 [1600/10000 (16%)]	Loss: 0.457488
+Train Epoch: 2 [2400/10000 (24%)]	Loss: 0.407821
+Train Epoch: 2 [3200/10000 (32%)]	Loss: 0.347246
+Train Epoch: 2 [4000/10000 (40%)]	Loss: 0.438987
+Train Epoch: 2 [4800/10000 (48%)]	Loss: 0.434015
+Train Epoch: 2 [5600/10000 (56%)]	Loss: 0.386394
+Train Epoch: 2 [6400/10000 (64%)]	Loss: 0.538913
+Train Epoch: 2 [7200/10000 (72%)]	Loss: 0.440951
+Train Epoch: 2 [8000/10000 (80%)]	Loss: 0.401025
+Train Epoch: 2 [8800/10000 (88%)]	Loss: 0.470282
+Train Epoch: 2 [9600/10000 (96%)]	Loss: 0.467231
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/nn/functional.py:1352: UserWarning: dropout2d: Received a 3D input to dropout2d and assuming that channel-wise 1D dropout behavior is desired - input is interpreted as shape (N, C, L), where C is the channel dim. This behavior will change in a future release to interpret the input as one without a batch dimension, i.e. shape (C, H, W). To maintain the 1D channel-wise dropout behavior, please switch to using dropout1d instead.
+  warnings.warn("dropout2d: Received a 3D input to dropout2d and assuming that channel-wise "
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:84: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_a = df_a.loc[df_a['filename'] == df.iloc[batch_idx, :][0]]
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:100: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_v = df_v.loc[df_v['filename'] == df.iloc[batch_idx, :][0]]
+Audio Event Detection Segment-level F1: 50.8
+Visual Event Detection Segment-level F1: 50.9
+Audio-Visual Event Detection Segment-level F1: 44.3
+Segment-levelType@Avg. F1: 48.6
+Segment-level Event@Avg. F1: 49.0
+Audio Event Detection Event-level F1: 43.8
+Visual Event Detection Event-level F1: 48.2
+Audio-Visual Event Detection Event-level F1: 39.8
+Event-level Type@Avg. F1: 43.9
+Event-level Event@Avg. F1: 42.8
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:149: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Train Epoch: 3 [0/10000 (0%)]	Loss: 0.348862
+Train Epoch: 3 [800/10000 (8%)]	Loss: 0.401463
+Train Epoch: 3 [1600/10000 (16%)]	Loss: 0.329843
+Train Epoch: 3 [2400/10000 (24%)]	Loss: 0.355895
+Train Epoch: 3 [3200/10000 (32%)]	Loss: 0.383485
+Train Epoch: 3 [4000/10000 (40%)]	Loss: 0.352377
+Train Epoch: 3 [4800/10000 (48%)]	Loss: 0.352123
+Train Epoch: 3 [5600/10000 (56%)]	Loss: 0.371093
+Train Epoch: 3 [6400/10000 (64%)]	Loss: 0.395361
+Train Epoch: 3 [7200/10000 (72%)]	Loss: 0.349989
+Train Epoch: 3 [8000/10000 (80%)]	Loss: 0.329057
+Train Epoch: 3 [8800/10000 (88%)]	Loss: 0.393871
+Train Epoch: 3 [9600/10000 (96%)]	Loss: 0.385603
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/nn/functional.py:1352: UserWarning: dropout2d: Received a 3D input to dropout2d and assuming that channel-wise 1D dropout behavior is desired - input is interpreted as shape (N, C, L), where C is the channel dim. This behavior will change in a future release to interpret the input as one without a batch dimension, i.e. shape (C, H, W). To maintain the 1D channel-wise dropout behavior, please switch to using dropout1d instead.
+  warnings.warn("dropout2d: Received a 3D input to dropout2d and assuming that channel-wise "
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:84: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_a = df_a.loc[df_a['filename'] == df.iloc[batch_idx, :][0]]
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:100: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_v = df_v.loc[df_v['filename'] == df.iloc[batch_idx, :][0]]
+Audio Event Detection Segment-level F1: 47.9
+Visual Event Detection Segment-level F1: 46.0
+Audio-Visual Event Detection Segment-level F1: 38.2
+Segment-levelType@Avg. F1: 44.0
+Segment-level Event@Avg. F1: 46.5
+Audio Event Detection Event-level F1: 39.7
+Visual Event Detection Event-level F1: 43.0
+Audio-Visual Event Detection Event-level F1: 33.3
+Event-level Type@Avg. F1: 38.7
+Event-level Event@Avg. F1: 39.5
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:149: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Train Epoch: 4 [0/10000 (0%)]	Loss: 0.361421
+Train Epoch: 4 [800/10000 (8%)]	Loss: 0.357555
+Train Epoch: 4 [1600/10000 (16%)]	Loss: 0.440951
+Train Epoch: 4 [2400/10000 (24%)]	Loss: 0.343637
+Train Epoch: 4 [3200/10000 (32%)]	Loss: 0.386074
+Train Epoch: 4 [4000/10000 (40%)]	Loss: 0.294998
+Train Epoch: 4 [4800/10000 (48%)]	Loss: 0.296856
+Train Epoch: 4 [5600/10000 (56%)]	Loss: 0.335238
+Train Epoch: 4 [6400/10000 (64%)]	Loss: 0.318200
+Train Epoch: 4 [7200/10000 (72%)]	Loss: 0.373705
+Train Epoch: 4 [8000/10000 (80%)]	Loss: 0.348367
+Train Epoch: 4 [8800/10000 (88%)]	Loss: 0.354917
+Train Epoch: 4 [9600/10000 (96%)]	Loss: 0.426145
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/nn/functional.py:1352: UserWarning: dropout2d: Received a 3D input to dropout2d and assuming that channel-wise 1D dropout behavior is desired - input is interpreted as shape (N, C, L), where C is the channel dim. This behavior will change in a future release to interpret the input as one without a batch dimension, i.e. shape (C, H, W). To maintain the 1D channel-wise dropout behavior, please switch to using dropout1d instead.
+  warnings.warn("dropout2d: Received a 3D input to dropout2d and assuming that channel-wise "
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:84: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_a = df_a.loc[df_a['filename'] == df.iloc[batch_idx, :][0]]
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:100: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_v = df_v.loc[df_v['filename'] == df.iloc[batch_idx, :][0]]
+Audio Event Detection Segment-level F1: 51.7
+Visual Event Detection Segment-level F1: 52.1
+Audio-Visual Event Detection Segment-level F1: 46.4
+Segment-levelType@Avg. F1: 50.1
+Segment-level Event@Avg. F1: 49.6
+Audio Event Detection Event-level F1: 45.0
+Visual Event Detection Event-level F1: 49.0
+Audio-Visual Event Detection Event-level F1: 41.7
+Event-level Type@Avg. F1: 45.3
+Event-level Event@Avg. F1: 43.5
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:149: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Train Epoch: 5 [0/10000 (0%)]	Loss: 0.310939
+Train Epoch: 5 [800/10000 (8%)]	Loss: 0.311750
+Train Epoch: 5 [1600/10000 (16%)]	Loss: 0.304578
+Train Epoch: 5 [2400/10000 (24%)]	Loss: 0.376166
+Train Epoch: 5 [3200/10000 (32%)]	Loss: 0.316790
+Train Epoch: 5 [4000/10000 (40%)]	Loss: 0.343851
+Train Epoch: 5 [4800/10000 (48%)]	Loss: 0.351021
+Train Epoch: 5 [5600/10000 (56%)]	Loss: 0.365417
+Train Epoch: 5 [6400/10000 (64%)]	Loss: 0.422027
+Train Epoch: 5 [7200/10000 (72%)]	Loss: 0.354175
+Train Epoch: 5 [8000/10000 (80%)]	Loss: 0.400705
+Train Epoch: 5 [8800/10000 (88%)]	Loss: 0.307587
+Train Epoch: 5 [9600/10000 (96%)]	Loss: 0.349650
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/nn/functional.py:1352: UserWarning: dropout2d: Received a 3D input to dropout2d and assuming that channel-wise 1D dropout behavior is desired - input is interpreted as shape (N, C, L), where C is the channel dim. This behavior will change in a future release to interpret the input as one without a batch dimension, i.e. shape (C, H, W). To maintain the 1D channel-wise dropout behavior, please switch to using dropout1d instead.
+  warnings.warn("dropout2d: Received a 3D input to dropout2d and assuming that channel-wise "
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:84: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_a = df_a.loc[df_a['filename'] == df.iloc[batch_idx, :][0]]
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:100: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_v = df_v.loc[df_v['filename'] == df.iloc[batch_idx, :][0]]
+Audio Event Detection Segment-level F1: 52.8
+Visual Event Detection Segment-level F1: 57.6
+Audio-Visual Event Detection Segment-level F1: 52.2
+Segment-levelType@Avg. F1: 54.2
+Segment-level Event@Avg. F1: 51.3
+Audio Event Detection Event-level F1: 45.9
+Visual Event Detection Event-level F1: 54.7
+Audio-Visual Event Detection Event-level F1: 46.9
+Event-level Type@Avg. F1: 49.2
+Event-level Event@Avg. F1: 45.2
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:149: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Train Epoch: 6 [0/10000 (0%)]	Loss: 0.360452
+Train Epoch: 6 [800/10000 (8%)]	Loss: 0.315585
+Train Epoch: 6 [1600/10000 (16%)]	Loss: 0.296425
+Train Epoch: 6 [2400/10000 (24%)]	Loss: 0.349402
+Train Epoch: 6 [3200/10000 (32%)]	Loss: 0.313167
+Train Epoch: 6 [4000/10000 (40%)]	Loss: 0.460052
+Train Epoch: 6 [4800/10000 (48%)]	Loss: 0.369043
+Train Epoch: 6 [5600/10000 (56%)]	Loss: 0.282425
+Train Epoch: 6 [6400/10000 (64%)]	Loss: 0.357824
+Train Epoch: 6 [7200/10000 (72%)]	Loss: 0.283057
+Train Epoch: 6 [8000/10000 (80%)]	Loss: 0.377044
+Train Epoch: 6 [8800/10000 (88%)]	Loss: 0.379911
+Train Epoch: 6 [9600/10000 (96%)]	Loss: 0.392829
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/nn/functional.py:1352: UserWarning: dropout2d: Received a 3D input to dropout2d and assuming that channel-wise 1D dropout behavior is desired - input is interpreted as shape (N, C, L), where C is the channel dim. This behavior will change in a future release to interpret the input as one without a batch dimension, i.e. shape (C, H, W). To maintain the 1D channel-wise dropout behavior, please switch to using dropout1d instead.
+  warnings.warn("dropout2d: Received a 3D input to dropout2d and assuming that channel-wise "
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:84: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_a = df_a.loc[df_a['filename'] == df.iloc[batch_idx, :][0]]
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:100: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_v = df_v.loc[df_v['filename'] == df.iloc[batch_idx, :][0]]
+Audio Event Detection Segment-level F1: 57.3
+Visual Event Detection Segment-level F1: 49.5
+Audio-Visual Event Detection Segment-level F1: 44.9
+Segment-levelType@Avg. F1: 50.5
+Segment-level Event@Avg. F1: 52.9
+Audio Event Detection Event-level F1: 48.1
+Visual Event Detection Event-level F1: 45.8
+Audio-Visual Event Detection Event-level F1: 39.2
+Event-level Type@Avg. F1: 44.4
+Event-level Event@Avg. F1: 45.5
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:149: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Train Epoch: 7 [0/10000 (0%)]	Loss: 0.312954
+Train Epoch: 7 [800/10000 (8%)]	Loss: 0.343336
+Train Epoch: 7 [1600/10000 (16%)]	Loss: 0.279608
+Train Epoch: 7 [2400/10000 (24%)]	Loss: 0.342374
+Train Epoch: 7 [3200/10000 (32%)]	Loss: 0.311982
+Train Epoch: 7 [4000/10000 (40%)]	Loss: 0.372824
+Train Epoch: 7 [4800/10000 (48%)]	Loss: 0.398777
+Train Epoch: 7 [5600/10000 (56%)]	Loss: 0.337452
+Train Epoch: 7 [6400/10000 (64%)]	Loss: 0.333023
+Train Epoch: 7 [7200/10000 (72%)]	Loss: 0.274645
+Train Epoch: 7 [8000/10000 (80%)]	Loss: 0.366520
+Train Epoch: 7 [8800/10000 (88%)]	Loss: 0.419081
+Train Epoch: 7 [9600/10000 (96%)]	Loss: 0.347289
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/nn/functional.py:1352: UserWarning: dropout2d: Received a 3D input to dropout2d and assuming that channel-wise 1D dropout behavior is desired - input is interpreted as shape (N, C, L), where C is the channel dim. This behavior will change in a future release to interpret the input as one without a batch dimension, i.e. shape (C, H, W). To maintain the 1D channel-wise dropout behavior, please switch to using dropout1d instead.
+  warnings.warn("dropout2d: Received a 3D input to dropout2d and assuming that channel-wise "
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:84: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_a = df_a.loc[df_a['filename'] == df.iloc[batch_idx, :][0]]
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:100: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_v = df_v.loc[df_v['filename'] == df.iloc[batch_idx, :][0]]
+Audio Event Detection Segment-level F1: 53.3
+Visual Event Detection Segment-level F1: 58.2
+Audio-Visual Event Detection Segment-level F1: 51.1
+Segment-levelType@Avg. F1: 54.2
+Segment-level Event@Avg. F1: 51.7
+Audio Event Detection Event-level F1: 47.2
+Visual Event Detection Event-level F1: 55.1
+Audio-Visual Event Detection Event-level F1: 45.8
+Event-level Type@Avg. F1: 49.4
+Event-level Event@Avg. F1: 46.0
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:149: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Train Epoch: 8 [0/10000 (0%)]	Loss: 0.358913
+Train Epoch: 8 [800/10000 (8%)]	Loss: 0.295281
+Train Epoch: 8 [1600/10000 (16%)]	Loss: 0.313775
+Train Epoch: 8 [2400/10000 (24%)]	Loss: 0.311585
+Train Epoch: 8 [3200/10000 (32%)]	Loss: 0.327095
+Train Epoch: 8 [4000/10000 (40%)]	Loss: 0.278602
+Train Epoch: 8 [4800/10000 (48%)]	Loss: 0.327687
+Train Epoch: 8 [5600/10000 (56%)]	Loss: 0.488379
+Train Epoch: 8 [6400/10000 (64%)]	Loss: 0.359000
+Train Epoch: 8 [7200/10000 (72%)]	Loss: 0.344931
+Train Epoch: 8 [8000/10000 (80%)]	Loss: 0.337701
+Train Epoch: 8 [8800/10000 (88%)]	Loss: 0.386118
+Train Epoch: 8 [9600/10000 (96%)]	Loss: 0.273692
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/nn/functional.py:1352: UserWarning: dropout2d: Received a 3D input to dropout2d and assuming that channel-wise 1D dropout behavior is desired - input is interpreted as shape (N, C, L), where C is the channel dim. This behavior will change in a future release to interpret the input as one without a batch dimension, i.e. shape (C, H, W). To maintain the 1D channel-wise dropout behavior, please switch to using dropout1d instead.
+  warnings.warn("dropout2d: Received a 3D input to dropout2d and assuming that channel-wise "
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:84: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_a = df_a.loc[df_a['filename'] == df.iloc[batch_idx, :][0]]
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:100: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_v = df_v.loc[df_v['filename'] == df.iloc[batch_idx, :][0]]
+Audio Event Detection Segment-level F1: 49.2
+Visual Event Detection Segment-level F1: 60.0
+Audio-Visual Event Detection Segment-level F1: 55.4
+Segment-levelType@Avg. F1: 54.9
+Segment-level Event@Avg. F1: 48.5
+Audio Event Detection Event-level F1: 43.7
+Visual Event Detection Event-level F1: 56.8
+Audio-Visual Event Detection Event-level F1: 49.5
+Event-level Type@Avg. F1: 50.0
+Event-level Event@Avg. F1: 43.4
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:149: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Train Epoch: 9 [0/10000 (0%)]	Loss: 0.321200
+Train Epoch: 9 [800/10000 (8%)]	Loss: 0.334085
+Train Epoch: 9 [1600/10000 (16%)]	Loss: 0.291516
+Train Epoch: 9 [2400/10000 (24%)]	Loss: 0.316936
+Train Epoch: 9 [3200/10000 (32%)]	Loss: 0.355387
+Train Epoch: 9 [4000/10000 (40%)]	Loss: 0.376311
+Train Epoch: 9 [4800/10000 (48%)]	Loss: 0.427924
+Train Epoch: 9 [5600/10000 (56%)]	Loss: 0.341886
+Train Epoch: 9 [6400/10000 (64%)]	Loss: 0.345804
+Train Epoch: 9 [7200/10000 (72%)]	Loss: 0.352244
+Train Epoch: 9 [8000/10000 (80%)]	Loss: 0.298030
+Train Epoch: 9 [8800/10000 (88%)]	Loss: 0.283183
+Train Epoch: 9 [9600/10000 (96%)]	Loss: 0.384309
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/nn/functional.py:1352: UserWarning: dropout2d: Received a 3D input to dropout2d and assuming that channel-wise 1D dropout behavior is desired - input is interpreted as shape (N, C, L), where C is the channel dim. This behavior will change in a future release to interpret the input as one without a batch dimension, i.e. shape (C, H, W). To maintain the 1D channel-wise dropout behavior, please switch to using dropout1d instead.
+  warnings.warn("dropout2d: Received a 3D input to dropout2d and assuming that channel-wise "
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:84: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_a = df_a.loc[df_a['filename'] == df.iloc[batch_idx, :][0]]
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:100: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_v = df_v.loc[df_v['filename'] == df.iloc[batch_idx, :][0]]
+Audio Event Detection Segment-level F1: 53.3
+Visual Event Detection Segment-level F1: 51.3
+Audio-Visual Event Detection Segment-level F1: 47.4
+Segment-levelType@Avg. F1: 50.7
+Segment-level Event@Avg. F1: 49.8
+Audio Event Detection Event-level F1: 46.2
+Visual Event Detection Event-level F1: 47.7
+Audio-Visual Event Detection Event-level F1: 41.7
+Event-level Type@Avg. F1: 45.2
+Event-level Event@Avg. F1: 43.6
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:149: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Train Epoch: 10 [0/10000 (0%)]	Loss: 0.446926
+Train Epoch: 10 [800/10000 (8%)]	Loss: 0.326174
+Train Epoch: 10 [1600/10000 (16%)]	Loss: 0.397445
+Train Epoch: 10 [2400/10000 (24%)]	Loss: 0.305582
+Train Epoch: 10 [3200/10000 (32%)]	Loss: 0.289642
+Train Epoch: 10 [4000/10000 (40%)]	Loss: 0.316088
+Train Epoch: 10 [4800/10000 (48%)]	Loss: 0.375995
+Train Epoch: 10 [5600/10000 (56%)]	Loss: 0.363489
+Train Epoch: 10 [6400/10000 (64%)]	Loss: 0.440660
+Train Epoch: 10 [7200/10000 (72%)]	Loss: 0.363511
+Train Epoch: 10 [8000/10000 (80%)]	Loss: 0.418761
+Train Epoch: 10 [8800/10000 (88%)]	Loss: 0.309122
+Train Epoch: 10 [9600/10000 (96%)]	Loss: 0.304419
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/nn/functional.py:1352: UserWarning: dropout2d: Received a 3D input to dropout2d and assuming that channel-wise 1D dropout behavior is desired - input is interpreted as shape (N, C, L), where C is the channel dim. This behavior will change in a future release to interpret the input as one without a batch dimension, i.e. shape (C, H, W). To maintain the 1D channel-wise dropout behavior, please switch to using dropout1d instead.
+  warnings.warn("dropout2d: Received a 3D input to dropout2d and assuming that channel-wise "
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:84: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_a = df_a.loc[df_a['filename'] == df.iloc[batch_idx, :][0]]
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:100: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_v = df_v.loc[df_v['filename'] == df.iloc[batch_idx, :][0]]
+Audio Event Detection Segment-level F1: 54.2
+Visual Event Detection Segment-level F1: 52.3
+Audio-Visual Event Detection Segment-level F1: 45.2
+Segment-levelType@Avg. F1: 50.6
+Segment-level Event@Avg. F1: 51.8
+Audio Event Detection Event-level F1: 46.6
+Visual Event Detection Event-level F1: 49.1
+Audio-Visual Event Detection Event-level F1: 40.3
+Event-level Type@Avg. F1: 45.3
+Event-level Event@Avg. F1: 45.1
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:149: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Train Epoch: 11 [0/10000 (0%)]	Loss: 0.306170
+Train Epoch: 11 [800/10000 (8%)]	Loss: 0.303048
+Train Epoch: 11 [1600/10000 (16%)]	Loss: 0.356652
+Train Epoch: 11 [2400/10000 (24%)]	Loss: 0.270079
+Train Epoch: 11 [3200/10000 (32%)]	Loss: 0.342292
+Train Epoch: 11 [4000/10000 (40%)]	Loss: 0.323767
+Train Epoch: 11 [4800/10000 (48%)]	Loss: 0.342900
+Train Epoch: 11 [5600/10000 (56%)]	Loss: 0.279561
+Train Epoch: 11 [6400/10000 (64%)]	Loss: 0.264146
+Train Epoch: 11 [7200/10000 (72%)]	Loss: 0.269240
+Train Epoch: 11 [8000/10000 (80%)]	Loss: 0.277192
+Train Epoch: 11 [8800/10000 (88%)]	Loss: 0.292371
+Train Epoch: 11 [9600/10000 (96%)]	Loss: 0.279894
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/nn/functional.py:1352: UserWarning: dropout2d: Received a 3D input to dropout2d and assuming that channel-wise 1D dropout behavior is desired - input is interpreted as shape (N, C, L), where C is the channel dim. This behavior will change in a future release to interpret the input as one without a batch dimension, i.e. shape (C, H, W). To maintain the 1D channel-wise dropout behavior, please switch to using dropout1d instead.
+  warnings.warn("dropout2d: Received a 3D input to dropout2d and assuming that channel-wise "
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:84: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_a = df_a.loc[df_a['filename'] == df.iloc[batch_idx, :][0]]
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:100: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_v = df_v.loc[df_v['filename'] == df.iloc[batch_idx, :][0]]
+Audio Event Detection Segment-level F1: 60.1
+Visual Event Detection Segment-level F1: 55.0
+Audio-Visual Event Detection Segment-level F1: 51.4
+Segment-levelType@Avg. F1: 55.5
+Segment-level Event@Avg. F1: 56.0
+Audio Event Detection Event-level F1: 51.6
+Visual Event Detection Event-level F1: 51.2
+Audio-Visual Event Detection Event-level F1: 45.1
+Event-level Type@Avg. F1: 49.3
+Event-level Event@Avg. F1: 48.9
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:149: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Train Epoch: 12 [0/10000 (0%)]	Loss: 0.308758
+Train Epoch: 12 [800/10000 (8%)]	Loss: 0.287724
+Train Epoch: 12 [1600/10000 (16%)]	Loss: 0.259574
+Train Epoch: 12 [2400/10000 (24%)]	Loss: 0.264478
+Train Epoch: 12 [3200/10000 (32%)]	Loss: 0.327160
+Train Epoch: 12 [4000/10000 (40%)]	Loss: 0.313460
+Train Epoch: 12 [4800/10000 (48%)]	Loss: 0.330406
+Train Epoch: 12 [5600/10000 (56%)]	Loss: 0.304154
+Train Epoch: 12 [6400/10000 (64%)]	Loss: 0.341208
+Train Epoch: 12 [7200/10000 (72%)]	Loss: 0.310133
+Train Epoch: 12 [8000/10000 (80%)]	Loss: 0.276965
+Train Epoch: 12 [8800/10000 (88%)]	Loss: 0.307750
+Train Epoch: 12 [9600/10000 (96%)]	Loss: 0.286873
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/nn/functional.py:1352: UserWarning: dropout2d: Received a 3D input to dropout2d and assuming that channel-wise 1D dropout behavior is desired - input is interpreted as shape (N, C, L), where C is the channel dim. This behavior will change in a future release to interpret the input as one without a batch dimension, i.e. shape (C, H, W). To maintain the 1D channel-wise dropout behavior, please switch to using dropout1d instead.
+  warnings.warn("dropout2d: Received a 3D input to dropout2d and assuming that channel-wise "
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:84: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_a = df_a.loc[df_a['filename'] == df.iloc[batch_idx, :][0]]
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:100: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_v = df_v.loc[df_v['filename'] == df.iloc[batch_idx, :][0]]
+Audio Event Detection Segment-level F1: 59.1
+Visual Event Detection Segment-level F1: 56.0
+Audio-Visual Event Detection Segment-level F1: 51.8
+Segment-levelType@Avg. F1: 55.6
+Segment-level Event@Avg. F1: 55.3
+Audio Event Detection Event-level F1: 50.7
+Visual Event Detection Event-level F1: 52.4
+Audio-Visual Event Detection Event-level F1: 45.7
+Event-level Type@Avg. F1: 49.6
+Event-level Event@Avg. F1: 48.4
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:149: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Train Epoch: 13 [0/10000 (0%)]	Loss: 0.282442
+Train Epoch: 13 [800/10000 (8%)]	Loss: 0.247594
+Train Epoch: 13 [1600/10000 (16%)]	Loss: 0.343930
+Train Epoch: 13 [2400/10000 (24%)]	Loss: 0.255549
+Train Epoch: 13 [3200/10000 (32%)]	Loss: 0.267679
+Train Epoch: 13 [4000/10000 (40%)]	Loss: 0.256584
+Train Epoch: 13 [4800/10000 (48%)]	Loss: 0.338027
+Train Epoch: 13 [5600/10000 (56%)]	Loss: 0.257352
+Train Epoch: 13 [6400/10000 (64%)]	Loss: 0.276205
+Train Epoch: 13 [7200/10000 (72%)]	Loss: 0.281457
+Train Epoch: 13 [8000/10000 (80%)]	Loss: 0.340154
+Train Epoch: 13 [8800/10000 (88%)]	Loss: 0.359940
+Train Epoch: 13 [9600/10000 (96%)]	Loss: 0.358715
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/nn/functional.py:1352: UserWarning: dropout2d: Received a 3D input to dropout2d and assuming that channel-wise 1D dropout behavior is desired - input is interpreted as shape (N, C, L), where C is the channel dim. This behavior will change in a future release to interpret the input as one without a batch dimension, i.e. shape (C, H, W). To maintain the 1D channel-wise dropout behavior, please switch to using dropout1d instead.
+  warnings.warn("dropout2d: Received a 3D input to dropout2d and assuming that channel-wise "
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:84: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_a = df_a.loc[df_a['filename'] == df.iloc[batch_idx, :][0]]
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:100: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_v = df_v.loc[df_v['filename'] == df.iloc[batch_idx, :][0]]
+Audio Event Detection Segment-level F1: 59.3
+Visual Event Detection Segment-level F1: 57.5
+Audio-Visual Event Detection Segment-level F1: 53.1
+Segment-levelType@Avg. F1: 56.6
+Segment-level Event@Avg. F1: 55.8
+Audio Event Detection Event-level F1: 50.9
+Visual Event Detection Event-level F1: 54.0
+Audio-Visual Event Detection Event-level F1: 46.8
+Event-level Type@Avg. F1: 50.6
+Event-level Event@Avg. F1: 48.8
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:149: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Train Epoch: 14 [0/10000 (0%)]	Loss: 0.287356
+Train Epoch: 14 [800/10000 (8%)]	Loss: 0.249448
+Train Epoch: 14 [1600/10000 (16%)]	Loss: 0.264185
+Train Epoch: 14 [2400/10000 (24%)]	Loss: 0.296969
+Train Epoch: 14 [3200/10000 (32%)]	Loss: 0.314381
+Train Epoch: 14 [4000/10000 (40%)]	Loss: 0.342791
+Train Epoch: 14 [4800/10000 (48%)]	Loss: 0.295578
+Train Epoch: 14 [5600/10000 (56%)]	Loss: 0.279592
+Train Epoch: 14 [6400/10000 (64%)]	Loss: 0.246386
+Train Epoch: 14 [7200/10000 (72%)]	Loss: 0.271954
+Train Epoch: 14 [8000/10000 (80%)]	Loss: 0.280789
+Train Epoch: 14 [8800/10000 (88%)]	Loss: 0.285413
+Train Epoch: 14 [9600/10000 (96%)]	Loss: 0.297011
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/nn/functional.py:1352: UserWarning: dropout2d: Received a 3D input to dropout2d and assuming that channel-wise 1D dropout behavior is desired - input is interpreted as shape (N, C, L), where C is the channel dim. This behavior will change in a future release to interpret the input as one without a batch dimension, i.e. shape (C, H, W). To maintain the 1D channel-wise dropout behavior, please switch to using dropout1d instead.
+  warnings.warn("dropout2d: Received a 3D input to dropout2d and assuming that channel-wise "
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:84: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_a = df_a.loc[df_a['filename'] == df.iloc[batch_idx, :][0]]
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:100: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_v = df_v.loc[df_v['filename'] == df.iloc[batch_idx, :][0]]
+Audio Event Detection Segment-level F1: 59.7
+Visual Event Detection Segment-level F1: 57.2
+Audio-Visual Event Detection Segment-level F1: 52.8
+Segment-levelType@Avg. F1: 56.5
+Segment-level Event@Avg. F1: 56.1
+Audio Event Detection Event-level F1: 51.1
+Visual Event Detection Event-level F1: 53.6
+Audio-Visual Event Detection Event-level F1: 46.6
+Event-level Type@Avg. F1: 50.4
+Event-level Event@Avg. F1: 48.9
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:149: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Train Epoch: 15 [0/10000 (0%)]	Loss: 0.301744
+Train Epoch: 15 [800/10000 (8%)]	Loss: 0.315004
+Train Epoch: 15 [1600/10000 (16%)]	Loss: 0.262855
+Train Epoch: 15 [2400/10000 (24%)]	Loss: 0.290246
+Train Epoch: 15 [3200/10000 (32%)]	Loss: 0.356146
+Train Epoch: 15 [4000/10000 (40%)]	Loss: 0.256100
+Train Epoch: 15 [4800/10000 (48%)]	Loss: 0.325270
+Train Epoch: 15 [5600/10000 (56%)]	Loss: 0.278759
+Train Epoch: 15 [6400/10000 (64%)]	Loss: 0.349603
+Train Epoch: 15 [7200/10000 (72%)]	Loss: 0.325317
+Train Epoch: 15 [8000/10000 (80%)]	Loss: 0.271260
+Train Epoch: 15 [8800/10000 (88%)]	Loss: 0.286076
+Train Epoch: 15 [9600/10000 (96%)]	Loss: 0.341398
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/nn/functional.py:1352: UserWarning: dropout2d: Received a 3D input to dropout2d and assuming that channel-wise 1D dropout behavior is desired - input is interpreted as shape (N, C, L), where C is the channel dim. This behavior will change in a future release to interpret the input as one without a batch dimension, i.e. shape (C, H, W). To maintain the 1D channel-wise dropout behavior, please switch to using dropout1d instead.
+  warnings.warn("dropout2d: Received a 3D input to dropout2d and assuming that channel-wise "
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:84: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_a = df_a.loc[df_a['filename'] == df.iloc[batch_idx, :][0]]
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:100: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_v = df_v.loc[df_v['filename'] == df.iloc[batch_idx, :][0]]
+Audio Event Detection Segment-level F1: 59.8
+Visual Event Detection Segment-level F1: 56.1
+Audio-Visual Event Detection Segment-level F1: 52.0
+Segment-levelType@Avg. F1: 56.0
+Segment-level Event@Avg. F1: 56.0
+Audio Event Detection Event-level F1: 51.0
+Visual Event Detection Event-level F1: 52.4
+Audio-Visual Event Detection Event-level F1: 45.6
+Event-level Type@Avg. F1: 49.7
+Event-level Event@Avg. F1: 48.7
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:149: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Train Epoch: 16 [0/10000 (0%)]	Loss: 0.282190
+Train Epoch: 16 [800/10000 (8%)]	Loss: 0.243181
+Train Epoch: 16 [1600/10000 (16%)]	Loss: 0.243286
+Train Epoch: 16 [2400/10000 (24%)]	Loss: 0.287420
+Train Epoch: 16 [3200/10000 (32%)]	Loss: 0.277884
+Train Epoch: 16 [4000/10000 (40%)]	Loss: 0.262364
+Train Epoch: 16 [4800/10000 (48%)]	Loss: 0.316015
+Train Epoch: 16 [5600/10000 (56%)]	Loss: 0.243887
+Train Epoch: 16 [6400/10000 (64%)]	Loss: 0.266669
+Train Epoch: 16 [7200/10000 (72%)]	Loss: 0.265590
+Train Epoch: 16 [8000/10000 (80%)]	Loss: 0.256813
+Train Epoch: 16 [8800/10000 (88%)]	Loss: 0.281583
+Train Epoch: 16 [9600/10000 (96%)]	Loss: 0.254735
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/nn/functional.py:1352: UserWarning: dropout2d: Received a 3D input to dropout2d and assuming that channel-wise 1D dropout behavior is desired - input is interpreted as shape (N, C, L), where C is the channel dim. This behavior will change in a future release to interpret the input as one without a batch dimension, i.e. shape (C, H, W). To maintain the 1D channel-wise dropout behavior, please switch to using dropout1d instead.
+  warnings.warn("dropout2d: Received a 3D input to dropout2d and assuming that channel-wise "
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:84: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_a = df_a.loc[df_a['filename'] == df.iloc[batch_idx, :][0]]
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:100: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_v = df_v.loc[df_v['filename'] == df.iloc[batch_idx, :][0]]
+Audio Event Detection Segment-level F1: 60.5
+Visual Event Detection Segment-level F1: 54.5
+Audio-Visual Event Detection Segment-level F1: 51.1
+Segment-levelType@Avg. F1: 55.4
+Segment-level Event@Avg. F1: 56.2
+Audio Event Detection Event-level F1: 51.8
+Visual Event Detection Event-level F1: 51.0
+Audio-Visual Event Detection Event-level F1: 45.0
+Event-level Type@Avg. F1: 49.2
+Event-level Event@Avg. F1: 49.1
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:149: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Train Epoch: 17 [0/10000 (0%)]	Loss: 0.295774
+Train Epoch: 17 [800/10000 (8%)]	Loss: 0.263838
+Train Epoch: 17 [1600/10000 (16%)]	Loss: 0.275738
+Train Epoch: 17 [2400/10000 (24%)]	Loss: 0.318610
+Train Epoch: 17 [3200/10000 (32%)]	Loss: 0.353520
+Train Epoch: 17 [4000/10000 (40%)]	Loss: 0.305378
+Train Epoch: 17 [4800/10000 (48%)]	Loss: 0.262997
+Train Epoch: 17 [5600/10000 (56%)]	Loss: 0.272644
+Train Epoch: 17 [6400/10000 (64%)]	Loss: 0.224405
+Train Epoch: 17 [7200/10000 (72%)]	Loss: 0.285968
+Train Epoch: 17 [8000/10000 (80%)]	Loss: 0.295282
+Train Epoch: 17 [8800/10000 (88%)]	Loss: 0.284596
+Train Epoch: 17 [9600/10000 (96%)]	Loss: 0.320289
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/nn/functional.py:1352: UserWarning: dropout2d: Received a 3D input to dropout2d and assuming that channel-wise 1D dropout behavior is desired - input is interpreted as shape (N, C, L), where C is the channel dim. This behavior will change in a future release to interpret the input as one without a batch dimension, i.e. shape (C, H, W). To maintain the 1D channel-wise dropout behavior, please switch to using dropout1d instead.
+  warnings.warn("dropout2d: Received a 3D input to dropout2d and assuming that channel-wise "
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:84: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_a = df_a.loc[df_a['filename'] == df.iloc[batch_idx, :][0]]
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:100: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_v = df_v.loc[df_v['filename'] == df.iloc[batch_idx, :][0]]
+Audio Event Detection Segment-level F1: 60.6
+Visual Event Detection Segment-level F1: 56.0
+Audio-Visual Event Detection Segment-level F1: 52.6
+Segment-levelType@Avg. F1: 56.4
+Segment-level Event@Avg. F1: 56.6
+Audio Event Detection Event-level F1: 51.8
+Visual Event Detection Event-level F1: 52.3
+Audio-Visual Event Detection Event-level F1: 46.2
+Event-level Type@Avg. F1: 50.1
+Event-level Event@Avg. F1: 49.4
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:149: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Train Epoch: 18 [0/10000 (0%)]	Loss: 0.309481
+Train Epoch: 18 [800/10000 (8%)]	Loss: 0.284202
+Train Epoch: 18 [1600/10000 (16%)]	Loss: 0.272827
+Train Epoch: 18 [2400/10000 (24%)]	Loss: 0.255475
+Train Epoch: 18 [3200/10000 (32%)]	Loss: 0.267901
+Train Epoch: 18 [4000/10000 (40%)]	Loss: 0.271792
+Train Epoch: 18 [4800/10000 (48%)]	Loss: 0.356045
+Train Epoch: 18 [5600/10000 (56%)]	Loss: 0.264094
+Train Epoch: 18 [6400/10000 (64%)]	Loss: 0.265882
+Train Epoch: 18 [7200/10000 (72%)]	Loss: 0.238094
+Train Epoch: 18 [8000/10000 (80%)]	Loss: 0.262910
+Train Epoch: 18 [8800/10000 (88%)]	Loss: 0.233133
+Train Epoch: 18 [9600/10000 (96%)]	Loss: 0.245226
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/nn/functional.py:1352: UserWarning: dropout2d: Received a 3D input to dropout2d and assuming that channel-wise 1D dropout behavior is desired - input is interpreted as shape (N, C, L), where C is the channel dim. This behavior will change in a future release to interpret the input as one without a batch dimension, i.e. shape (C, H, W). To maintain the 1D channel-wise dropout behavior, please switch to using dropout1d instead.
+  warnings.warn("dropout2d: Received a 3D input to dropout2d and assuming that channel-wise "
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:84: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_a = df_a.loc[df_a['filename'] == df.iloc[batch_idx, :][0]]
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:100: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_v = df_v.loc[df_v['filename'] == df.iloc[batch_idx, :][0]]
+Audio Event Detection Segment-level F1: 60.9
+Visual Event Detection Segment-level F1: 56.3
+Audio-Visual Event Detection Segment-level F1: 52.4
+Segment-levelType@Avg. F1: 56.6
+Segment-level Event@Avg. F1: 57.0
+Audio Event Detection Event-level F1: 52.1
+Visual Event Detection Event-level F1: 52.6
+Audio-Visual Event Detection Event-level F1: 46.1
+Event-level Type@Avg. F1: 50.3
+Event-level Event@Avg. F1: 49.6
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:149: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Train Epoch: 19 [0/10000 (0%)]	Loss: 0.285266
+Train Epoch: 19 [800/10000 (8%)]	Loss: 0.284974
+Train Epoch: 19 [1600/10000 (16%)]	Loss: 0.266799
+Train Epoch: 19 [2400/10000 (24%)]	Loss: 0.249404
+Train Epoch: 19 [3200/10000 (32%)]	Loss: 0.272971
+Train Epoch: 19 [4000/10000 (40%)]	Loss: 0.275203
+Train Epoch: 19 [4800/10000 (48%)]	Loss: 0.289105
+Train Epoch: 19 [5600/10000 (56%)]	Loss: 0.235484
+Train Epoch: 19 [6400/10000 (64%)]	Loss: 0.240695
+Train Epoch: 19 [7200/10000 (72%)]	Loss: 0.271271
+Train Epoch: 19 [8000/10000 (80%)]	Loss: 0.309314
+Train Epoch: 19 [8800/10000 (88%)]	Loss: 0.352924
+Train Epoch: 19 [9600/10000 (96%)]	Loss: 0.257852
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/nn/functional.py:1352: UserWarning: dropout2d: Received a 3D input to dropout2d and assuming that channel-wise 1D dropout behavior is desired - input is interpreted as shape (N, C, L), where C is the channel dim. This behavior will change in a future release to interpret the input as one without a batch dimension, i.e. shape (C, H, W). To maintain the 1D channel-wise dropout behavior, please switch to using dropout1d instead.
+  warnings.warn("dropout2d: Received a 3D input to dropout2d and assuming that channel-wise "
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:84: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_a = df_a.loc[df_a['filename'] == df.iloc[batch_idx, :][0]]
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:100: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_v = df_v.loc[df_v['filename'] == df.iloc[batch_idx, :][0]]
+Audio Event Detection Segment-level F1: 60.4
+Visual Event Detection Segment-level F1: 56.2
+Audio-Visual Event Detection Segment-level F1: 52.6
+Segment-levelType@Avg. F1: 56.4
+Segment-level Event@Avg. F1: 56.3
+Audio Event Detection Event-level F1: 51.8
+Visual Event Detection Event-level F1: 52.5
+Audio-Visual Event Detection Event-level F1: 46.2
+Event-level Type@Avg. F1: 50.2
+Event-level Event@Avg. F1: 49.2
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:149: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Train Epoch: 20 [0/10000 (0%)]	Loss: 0.282465
+Train Epoch: 20 [800/10000 (8%)]	Loss: 0.274957
+Train Epoch: 20 [1600/10000 (16%)]	Loss: 0.249511
+Train Epoch: 20 [2400/10000 (24%)]	Loss: 0.241331
+Train Epoch: 20 [3200/10000 (32%)]	Loss: 0.285294
+Train Epoch: 20 [4000/10000 (40%)]	Loss: 0.231348
+Train Epoch: 20 [4800/10000 (48%)]	Loss: 0.268981
+Train Epoch: 20 [5600/10000 (56%)]	Loss: 0.262647
+Train Epoch: 20 [6400/10000 (64%)]	Loss: 0.260504
+Train Epoch: 20 [7200/10000 (72%)]	Loss: 0.284565
+Train Epoch: 20 [8000/10000 (80%)]	Loss: 0.251711
+Train Epoch: 20 [8800/10000 (88%)]	Loss: 0.259728
+Train Epoch: 20 [9600/10000 (96%)]	Loss: 0.247193
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/nn/functional.py:1352: UserWarning: dropout2d: Received a 3D input to dropout2d and assuming that channel-wise 1D dropout behavior is desired - input is interpreted as shape (N, C, L), where C is the channel dim. This behavior will change in a future release to interpret the input as one without a batch dimension, i.e. shape (C, H, W). To maintain the 1D channel-wise dropout behavior, please switch to using dropout1d instead.
+  warnings.warn("dropout2d: Received a 3D input to dropout2d and assuming that channel-wise "
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:84: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_a = df_a.loc[df_a['filename'] == df.iloc[batch_idx, :][0]]
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:100: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_v = df_v.loc[df_v['filename'] == df.iloc[batch_idx, :][0]]
+Audio Event Detection Segment-level F1: 61.1
+Visual Event Detection Segment-level F1: 55.6
+Audio-Visual Event Detection Segment-level F1: 51.6
+Segment-levelType@Avg. F1: 56.1
+Segment-level Event@Avg. F1: 56.9
+Audio Event Detection Event-level F1: 52.0
+Visual Event Detection Event-level F1: 51.9
+Audio-Visual Event Detection Event-level F1: 45.2
+Event-level Type@Avg. F1: 49.7
+Event-level Event@Avg. F1: 49.4
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:149: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Train Epoch: 21 [0/10000 (0%)]	Loss: 0.265052
+Train Epoch: 21 [800/10000 (8%)]	Loss: 0.229112
+Train Epoch: 21 [1600/10000 (16%)]	Loss: 0.252535
+Train Epoch: 21 [2400/10000 (24%)]	Loss: 0.234225
+Train Epoch: 21 [3200/10000 (32%)]	Loss: 0.231957
+Train Epoch: 21 [4000/10000 (40%)]	Loss: 0.266630
+Train Epoch: 21 [4800/10000 (48%)]	Loss: 0.247927
+Train Epoch: 21 [5600/10000 (56%)]	Loss: 0.252710
+Train Epoch: 21 [6400/10000 (64%)]	Loss: 0.266852
+Train Epoch: 21 [7200/10000 (72%)]	Loss: 0.264326
+Train Epoch: 21 [8000/10000 (80%)]	Loss: 0.265314
+Train Epoch: 21 [8800/10000 (88%)]	Loss: 0.231276
+Train Epoch: 21 [9600/10000 (96%)]	Loss: 0.277154
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/nn/functional.py:1352: UserWarning: dropout2d: Received a 3D input to dropout2d and assuming that channel-wise 1D dropout behavior is desired - input is interpreted as shape (N, C, L), where C is the channel dim. This behavior will change in a future release to interpret the input as one without a batch dimension, i.e. shape (C, H, W). To maintain the 1D channel-wise dropout behavior, please switch to using dropout1d instead.
+  warnings.warn("dropout2d: Received a 3D input to dropout2d and assuming that channel-wise "
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:84: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_a = df_a.loc[df_a['filename'] == df.iloc[batch_idx, :][0]]
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:100: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_v = df_v.loc[df_v['filename'] == df.iloc[batch_idx, :][0]]
+Audio Event Detection Segment-level F1: 59.6
+Visual Event Detection Segment-level F1: 55.4
+Audio-Visual Event Detection Segment-level F1: 52.0
+Segment-levelType@Avg. F1: 55.7
+Segment-level Event@Avg. F1: 55.7
+Audio Event Detection Event-level F1: 51.0
+Visual Event Detection Event-level F1: 51.6
+Audio-Visual Event Detection Event-level F1: 45.5
+Event-level Type@Avg. F1: 49.4
+Event-level Event@Avg. F1: 48.6
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:149: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Train Epoch: 22 [0/10000 (0%)]	Loss: 0.296999
+Train Epoch: 22 [800/10000 (8%)]	Loss: 0.226987
+Train Epoch: 22 [1600/10000 (16%)]	Loss: 0.223920
+Train Epoch: 22 [2400/10000 (24%)]	Loss: 0.286628
+Train Epoch: 22 [3200/10000 (32%)]	Loss: 0.281583
+Train Epoch: 22 [4000/10000 (40%)]	Loss: 0.245277
+Train Epoch: 22 [4800/10000 (48%)]	Loss: 0.256794
+Train Epoch: 22 [5600/10000 (56%)]	Loss: 0.273199
+Train Epoch: 22 [6400/10000 (64%)]	Loss: 0.266301
+Train Epoch: 22 [7200/10000 (72%)]	Loss: 0.257084
+Train Epoch: 22 [8000/10000 (80%)]	Loss: 0.323472
+Train Epoch: 22 [8800/10000 (88%)]	Loss: 0.309711
+Train Epoch: 22 [9600/10000 (96%)]	Loss: 0.248686
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/nn/functional.py:1352: UserWarning: dropout2d: Received a 3D input to dropout2d and assuming that channel-wise 1D dropout behavior is desired - input is interpreted as shape (N, C, L), where C is the channel dim. This behavior will change in a future release to interpret the input as one without a batch dimension, i.e. shape (C, H, W). To maintain the 1D channel-wise dropout behavior, please switch to using dropout1d instead.
+  warnings.warn("dropout2d: Received a 3D input to dropout2d and assuming that channel-wise "
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:84: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_a = df_a.loc[df_a['filename'] == df.iloc[batch_idx, :][0]]
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:100: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_v = df_v.loc[df_v['filename'] == df.iloc[batch_idx, :][0]]
+Audio Event Detection Segment-level F1: 60.0
+Visual Event Detection Segment-level F1: 55.3
+Audio-Visual Event Detection Segment-level F1: 51.9
+Segment-levelType@Avg. F1: 55.7
+Segment-level Event@Avg. F1: 56.0
+Audio Event Detection Event-level F1: 51.3
+Visual Event Detection Event-level F1: 51.4
+Audio-Visual Event Detection Event-level F1: 45.4
+Event-level Type@Avg. F1: 49.4
+Event-level Event@Avg. F1: 48.9
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:149: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Train Epoch: 23 [0/10000 (0%)]	Loss: 0.264639
+Train Epoch: 23 [800/10000 (8%)]	Loss: 0.238140
+Train Epoch: 23 [1600/10000 (16%)]	Loss: 0.281035
+Train Epoch: 23 [2400/10000 (24%)]	Loss: 0.266964
+Train Epoch: 23 [3200/10000 (32%)]	Loss: 0.256885
+Train Epoch: 23 [4000/10000 (40%)]	Loss: 0.301420
+Train Epoch: 23 [4800/10000 (48%)]	Loss: 0.251954
+Train Epoch: 23 [5600/10000 (56%)]	Loss: 0.229363
+Train Epoch: 23 [6400/10000 (64%)]	Loss: 0.268780
+Train Epoch: 23 [7200/10000 (72%)]	Loss: 0.254584
+Train Epoch: 23 [8000/10000 (80%)]	Loss: 0.271600
+Train Epoch: 23 [8800/10000 (88%)]	Loss: 0.263407
+Train Epoch: 23 [9600/10000 (96%)]	Loss: 0.297589
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/nn/functional.py:1352: UserWarning: dropout2d: Received a 3D input to dropout2d and assuming that channel-wise 1D dropout behavior is desired - input is interpreted as shape (N, C, L), where C is the channel dim. This behavior will change in a future release to interpret the input as one without a batch dimension, i.e. shape (C, H, W). To maintain the 1D channel-wise dropout behavior, please switch to using dropout1d instead.
+  warnings.warn("dropout2d: Received a 3D input to dropout2d and assuming that channel-wise "
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:84: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_a = df_a.loc[df_a['filename'] == df.iloc[batch_idx, :][0]]
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:100: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_v = df_v.loc[df_v['filename'] == df.iloc[batch_idx, :][0]]
+Audio Event Detection Segment-level F1: 59.7
+Visual Event Detection Segment-level F1: 55.7
+Audio-Visual Event Detection Segment-level F1: 52.4
+Segment-levelType@Avg. F1: 55.9
+Segment-level Event@Avg. F1: 55.8
+Audio Event Detection Event-level F1: 51.0
+Visual Event Detection Event-level F1: 51.9
+Audio-Visual Event Detection Event-level F1: 45.8
+Event-level Type@Avg. F1: 49.6
+Event-level Event@Avg. F1: 48.7
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:149: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Train Epoch: 24 [0/10000 (0%)]	Loss: 0.233029
+Train Epoch: 24 [800/10000 (8%)]	Loss: 0.282836
+Train Epoch: 24 [1600/10000 (16%)]	Loss: 0.278462
+Train Epoch: 24 [2400/10000 (24%)]	Loss: 0.250585
+Train Epoch: 24 [3200/10000 (32%)]	Loss: 0.242420
+Train Epoch: 24 [4000/10000 (40%)]	Loss: 0.272728
+Train Epoch: 24 [4800/10000 (48%)]	Loss: 0.253670
+Train Epoch: 24 [5600/10000 (56%)]	Loss: 0.270289
+Train Epoch: 24 [6400/10000 (64%)]	Loss: 0.234580
+Train Epoch: 24 [7200/10000 (72%)]	Loss: 0.244694
+Train Epoch: 24 [8000/10000 (80%)]	Loss: 0.283044
+Train Epoch: 24 [8800/10000 (88%)]	Loss: 0.334748
+Train Epoch: 24 [9600/10000 (96%)]	Loss: 0.237908
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/nn/functional.py:1352: UserWarning: dropout2d: Received a 3D input to dropout2d and assuming that channel-wise 1D dropout behavior is desired - input is interpreted as shape (N, C, L), where C is the channel dim. This behavior will change in a future release to interpret the input as one without a batch dimension, i.e. shape (C, H, W). To maintain the 1D channel-wise dropout behavior, please switch to using dropout1d instead.
+  warnings.warn("dropout2d: Received a 3D input to dropout2d and assuming that channel-wise "
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:84: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_a = df_a.loc[df_a['filename'] == df.iloc[batch_idx, :][0]]
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:100: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_v = df_v.loc[df_v['filename'] == df.iloc[batch_idx, :][0]]
+Audio Event Detection Segment-level F1: 59.8
+Visual Event Detection Segment-level F1: 55.0
+Audio-Visual Event Detection Segment-level F1: 51.5
+Segment-levelType@Avg. F1: 55.4
+Segment-level Event@Avg. F1: 55.8
+Audio Event Detection Event-level F1: 51.2
+Visual Event Detection Event-level F1: 51.1
+Audio-Visual Event Detection Event-level F1: 45.0
+Event-level Type@Avg. F1: 49.1
+Event-level Event@Avg. F1: 48.6
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:149: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Train Epoch: 25 [0/10000 (0%)]	Loss: 0.285524
+Train Epoch: 25 [800/10000 (8%)]	Loss: 0.276426
+Train Epoch: 25 [1600/10000 (16%)]	Loss: 0.258508
+Train Epoch: 25 [2400/10000 (24%)]	Loss: 0.252854
+Train Epoch: 25 [3200/10000 (32%)]	Loss: 0.251731
+Train Epoch: 25 [4000/10000 (40%)]	Loss: 0.276497
+Train Epoch: 25 [4800/10000 (48%)]	Loss: 0.261377
+Train Epoch: 25 [5600/10000 (56%)]	Loss: 0.320780
+Train Epoch: 25 [6400/10000 (64%)]	Loss: 0.238803
+Train Epoch: 25 [7200/10000 (72%)]	Loss: 0.277234
+Train Epoch: 25 [8000/10000 (80%)]	Loss: 0.261462
+Train Epoch: 25 [8800/10000 (88%)]	Loss: 0.309038
+Train Epoch: 25 [9600/10000 (96%)]	Loss: 0.282873
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/nn/functional.py:1352: UserWarning: dropout2d: Received a 3D input to dropout2d and assuming that channel-wise 1D dropout behavior is desired - input is interpreted as shape (N, C, L), where C is the channel dim. This behavior will change in a future release to interpret the input as one without a batch dimension, i.e. shape (C, H, W). To maintain the 1D channel-wise dropout behavior, please switch to using dropout1d instead.
+  warnings.warn("dropout2d: Received a 3D input to dropout2d and assuming that channel-wise "
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:84: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_a = df_a.loc[df_a['filename'] == df.iloc[batch_idx, :][0]]
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:100: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_v = df_v.loc[df_v['filename'] == df.iloc[batch_idx, :][0]]
+Audio Event Detection Segment-level F1: 59.6
+Visual Event Detection Segment-level F1: 54.7
+Audio-Visual Event Detection Segment-level F1: 51.5
+Segment-levelType@Avg. F1: 55.3
+Segment-level Event@Avg. F1: 55.4
+Audio Event Detection Event-level F1: 50.9
+Visual Event Detection Event-level F1: 50.8
+Audio-Visual Event Detection Event-level F1: 45.0
+Event-level Type@Avg. F1: 48.9
+Event-level Event@Avg. F1: 48.3
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:149: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Train Epoch: 26 [0/10000 (0%)]	Loss: 0.236048
+Train Epoch: 26 [800/10000 (8%)]	Loss: 0.334601
+Train Epoch: 26 [1600/10000 (16%)]	Loss: 0.237640
+Train Epoch: 26 [2400/10000 (24%)]	Loss: 0.253796
+Train Epoch: 26 [3200/10000 (32%)]	Loss: 0.246797
+Train Epoch: 26 [4000/10000 (40%)]	Loss: 0.293666
+Train Epoch: 26 [4800/10000 (48%)]	Loss: 0.257634
+Train Epoch: 26 [5600/10000 (56%)]	Loss: 0.260149
+Train Epoch: 26 [6400/10000 (64%)]	Loss: 0.271429
+Train Epoch: 26 [7200/10000 (72%)]	Loss: 0.239982
+Train Epoch: 26 [8000/10000 (80%)]	Loss: 0.253536
+Train Epoch: 26 [8800/10000 (88%)]	Loss: 0.259761
+Train Epoch: 26 [9600/10000 (96%)]	Loss: 0.271492
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/nn/functional.py:1352: UserWarning: dropout2d: Received a 3D input to dropout2d and assuming that channel-wise 1D dropout behavior is desired - input is interpreted as shape (N, C, L), where C is the channel dim. This behavior will change in a future release to interpret the input as one without a batch dimension, i.e. shape (C, H, W). To maintain the 1D channel-wise dropout behavior, please switch to using dropout1d instead.
+  warnings.warn("dropout2d: Received a 3D input to dropout2d and assuming that channel-wise "
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:84: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_a = df_a.loc[df_a['filename'] == df.iloc[batch_idx, :][0]]
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:100: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_v = df_v.loc[df_v['filename'] == df.iloc[batch_idx, :][0]]
+Audio Event Detection Segment-level F1: 59.5
+Visual Event Detection Segment-level F1: 55.0
+Audio-Visual Event Detection Segment-level F1: 51.5
+Segment-levelType@Avg. F1: 55.3
+Segment-level Event@Avg. F1: 55.6
+Audio Event Detection Event-level F1: 50.9
+Visual Event Detection Event-level F1: 51.1
+Audio-Visual Event Detection Event-level F1: 45.1
+Event-level Type@Avg. F1: 49.0
+Event-level Event@Avg. F1: 48.5
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:149: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Train Epoch: 27 [0/10000 (0%)]	Loss: 0.251657
+Train Epoch: 27 [800/10000 (8%)]	Loss: 0.339855
+Train Epoch: 27 [1600/10000 (16%)]	Loss: 0.266385
+Train Epoch: 27 [2400/10000 (24%)]	Loss: 0.261926
+Train Epoch: 27 [3200/10000 (32%)]	Loss: 0.260301
+Train Epoch: 27 [4000/10000 (40%)]	Loss: 0.256595
+Train Epoch: 27 [4800/10000 (48%)]	Loss: 0.302868
+Train Epoch: 27 [5600/10000 (56%)]	Loss: 0.279615
+Train Epoch: 27 [6400/10000 (64%)]	Loss: 0.285091
+Train Epoch: 27 [7200/10000 (72%)]	Loss: 0.236807
+Train Epoch: 27 [8000/10000 (80%)]	Loss: 0.263081
+Train Epoch: 27 [8800/10000 (88%)]	Loss: 0.234779
+Train Epoch: 27 [9600/10000 (96%)]	Loss: 0.254083
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/nn/functional.py:1352: UserWarning: dropout2d: Received a 3D input to dropout2d and assuming that channel-wise 1D dropout behavior is desired - input is interpreted as shape (N, C, L), where C is the channel dim. This behavior will change in a future release to interpret the input as one without a batch dimension, i.e. shape (C, H, W). To maintain the 1D channel-wise dropout behavior, please switch to using dropout1d instead.
+  warnings.warn("dropout2d: Received a 3D input to dropout2d and assuming that channel-wise "
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:84: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_a = df_a.loc[df_a['filename'] == df.iloc[batch_idx, :][0]]
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:100: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_v = df_v.loc[df_v['filename'] == df.iloc[batch_idx, :][0]]
+Audio Event Detection Segment-level F1: 59.8
+Visual Event Detection Segment-level F1: 55.0
+Audio-Visual Event Detection Segment-level F1: 51.6
+Segment-levelType@Avg. F1: 55.5
+Segment-level Event@Avg. F1: 55.9
+Audio Event Detection Event-level F1: 51.0
+Visual Event Detection Event-level F1: 51.2
+Audio-Visual Event Detection Event-level F1: 45.1
+Event-level Type@Avg. F1: 49.1
+Event-level Event@Avg. F1: 48.7
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:149: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Train Epoch: 28 [0/10000 (0%)]	Loss: 0.290056
+Train Epoch: 28 [800/10000 (8%)]	Loss: 0.293751
+Train Epoch: 28 [1600/10000 (16%)]	Loss: 0.273076
+Train Epoch: 28 [2400/10000 (24%)]	Loss: 0.265503
+Train Epoch: 28 [3200/10000 (32%)]	Loss: 0.241756
+Train Epoch: 28 [4000/10000 (40%)]	Loss: 0.294179
+Train Epoch: 28 [4800/10000 (48%)]	Loss: 0.289029
+Train Epoch: 28 [5600/10000 (56%)]	Loss: 0.245918
+Train Epoch: 28 [6400/10000 (64%)]	Loss: 0.275484
+Train Epoch: 28 [7200/10000 (72%)]	Loss: 0.320531
+Train Epoch: 28 [8000/10000 (80%)]	Loss: 0.245679
+Train Epoch: 28 [8800/10000 (88%)]	Loss: 0.249764
+Train Epoch: 28 [9600/10000 (96%)]	Loss: 0.239430
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/nn/functional.py:1352: UserWarning: dropout2d: Received a 3D input to dropout2d and assuming that channel-wise 1D dropout behavior is desired - input is interpreted as shape (N, C, L), where C is the channel dim. This behavior will change in a future release to interpret the input as one without a batch dimension, i.e. shape (C, H, W). To maintain the 1D channel-wise dropout behavior, please switch to using dropout1d instead.
+  warnings.warn("dropout2d: Received a 3D input to dropout2d and assuming that channel-wise "
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:84: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_a = df_a.loc[df_a['filename'] == df.iloc[batch_idx, :][0]]
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:100: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_v = df_v.loc[df_v['filename'] == df.iloc[batch_idx, :][0]]
+Audio Event Detection Segment-level F1: 59.6
+Visual Event Detection Segment-level F1: 55.5
+Audio-Visual Event Detection Segment-level F1: 52.0
+Segment-levelType@Avg. F1: 55.7
+Segment-level Event@Avg. F1: 55.6
+Audio Event Detection Event-level F1: 50.9
+Visual Event Detection Event-level F1: 51.6
+Audio-Visual Event Detection Event-level F1: 45.3
+Event-level Type@Avg. F1: 49.3
+Event-level Event@Avg. F1: 48.4
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:149: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Train Epoch: 29 [0/10000 (0%)]	Loss: 0.279844
+Train Epoch: 29 [800/10000 (8%)]	Loss: 0.256709
+Train Epoch: 29 [1600/10000 (16%)]	Loss: 0.267162
+Train Epoch: 29 [2400/10000 (24%)]	Loss: 0.224382
+Train Epoch: 29 [3200/10000 (32%)]	Loss: 0.264156
+Train Epoch: 29 [4000/10000 (40%)]	Loss: 0.243861
+Train Epoch: 29 [4800/10000 (48%)]	Loss: 0.242080
+Train Epoch: 29 [5600/10000 (56%)]	Loss: 0.315871
+Train Epoch: 29 [6400/10000 (64%)]	Loss: 0.251846
+Train Epoch: 29 [7200/10000 (72%)]	Loss: 0.223088
+Train Epoch: 29 [8000/10000 (80%)]	Loss: 0.273271
+Train Epoch: 29 [8800/10000 (88%)]	Loss: 0.251515
+Train Epoch: 29 [9600/10000 (96%)]	Loss: 0.321182
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/nn/functional.py:1352: UserWarning: dropout2d: Received a 3D input to dropout2d and assuming that channel-wise 1D dropout behavior is desired - input is interpreted as shape (N, C, L), where C is the channel dim. This behavior will change in a future release to interpret the input as one without a batch dimension, i.e. shape (C, H, W). To maintain the 1D channel-wise dropout behavior, please switch to using dropout1d instead.
+  warnings.warn("dropout2d: Received a 3D input to dropout2d and assuming that channel-wise "
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:84: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_a = df_a.loc[df_a['filename'] == df.iloc[batch_idx, :][0]]
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:100: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_v = df_v.loc[df_v['filename'] == df.iloc[batch_idx, :][0]]
+Audio Event Detection Segment-level F1: 59.9
+Visual Event Detection Segment-level F1: 55.6
+Audio-Visual Event Detection Segment-level F1: 52.1
+Segment-levelType@Avg. F1: 55.9
+Segment-level Event@Avg. F1: 56.0
+Audio Event Detection Event-level F1: 51.2
+Visual Event Detection Event-level F1: 51.7
+Audio-Visual Event Detection Event-level F1: 45.5
+Event-level Type@Avg. F1: 49.5
+Event-level Event@Avg. F1: 48.8
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:149: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Train Epoch: 30 [0/10000 (0%)]	Loss: 0.252231
+Train Epoch: 30 [800/10000 (8%)]	Loss: 0.286362
+Train Epoch: 30 [1600/10000 (16%)]	Loss: 0.236596
+Train Epoch: 30 [2400/10000 (24%)]	Loss: 0.251734
+Train Epoch: 30 [3200/10000 (32%)]	Loss: 0.271281
+Train Epoch: 30 [4000/10000 (40%)]	Loss: 0.281424
+Train Epoch: 30 [4800/10000 (48%)]	Loss: 0.253094
+Train Epoch: 30 [5600/10000 (56%)]	Loss: 0.235065
+Train Epoch: 30 [6400/10000 (64%)]	Loss: 0.258453
+Train Epoch: 30 [7200/10000 (72%)]	Loss: 0.282787
+Train Epoch: 30 [8000/10000 (80%)]	Loss: 0.249691
+Train Epoch: 30 [8800/10000 (88%)]	Loss: 0.315479
+Train Epoch: 30 [9600/10000 (96%)]	Loss: 0.266913
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/nn/functional.py:1352: UserWarning: dropout2d: Received a 3D input to dropout2d and assuming that channel-wise 1D dropout behavior is desired - input is interpreted as shape (N, C, L), where C is the channel dim. This behavior will change in a future release to interpret the input as one without a batch dimension, i.e. shape (C, H, W). To maintain the 1D channel-wise dropout behavior, please switch to using dropout1d instead.
+  warnings.warn("dropout2d: Received a 3D input to dropout2d and assuming that channel-wise "
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:84: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_a = df_a.loc[df_a['filename'] == df.iloc[batch_idx, :][0]]
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:100: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_v = df_v.loc[df_v['filename'] == df.iloc[batch_idx, :][0]]
+Audio Event Detection Segment-level F1: 59.9
+Visual Event Detection Segment-level F1: 54.9
+Audio-Visual Event Detection Segment-level F1: 51.6
+Segment-levelType@Avg. F1: 55.5
+Segment-level Event@Avg. F1: 55.9
+Audio Event Detection Event-level F1: 51.0
+Visual Event Detection Event-level F1: 51.1
+Audio-Visual Event Detection Event-level F1: 45.2
+Event-level Type@Avg. F1: 49.1
+Event-level Event@Avg. F1: 48.6
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:149: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Train Epoch: 31 [0/10000 (0%)]	Loss: 0.245554
+Train Epoch: 31 [800/10000 (8%)]	Loss: 0.325913
+Train Epoch: 31 [1600/10000 (16%)]	Loss: 0.250544
+Train Epoch: 31 [2400/10000 (24%)]	Loss: 0.270030
+Train Epoch: 31 [3200/10000 (32%)]	Loss: 0.267809
+Train Epoch: 31 [4000/10000 (40%)]	Loss: 0.245653
+Train Epoch: 31 [4800/10000 (48%)]	Loss: 0.221109
+Train Epoch: 31 [5600/10000 (56%)]	Loss: 0.304473
+Train Epoch: 31 [6400/10000 (64%)]	Loss: 0.264231
+Train Epoch: 31 [7200/10000 (72%)]	Loss: 0.260739
+Train Epoch: 31 [8000/10000 (80%)]	Loss: 0.232182
+Train Epoch: 31 [8800/10000 (88%)]	Loss: 0.297618
+Train Epoch: 31 [9600/10000 (96%)]	Loss: 0.311514
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/nn/functional.py:1352: UserWarning: dropout2d: Received a 3D input to dropout2d and assuming that channel-wise 1D dropout behavior is desired - input is interpreted as shape (N, C, L), where C is the channel dim. This behavior will change in a future release to interpret the input as one without a batch dimension, i.e. shape (C, H, W). To maintain the 1D channel-wise dropout behavior, please switch to using dropout1d instead.
+  warnings.warn("dropout2d: Received a 3D input to dropout2d and assuming that channel-wise "
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:84: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_a = df_a.loc[df_a['filename'] == df.iloc[batch_idx, :][0]]
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:100: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_v = df_v.loc[df_v['filename'] == df.iloc[batch_idx, :][0]]
+Audio Event Detection Segment-level F1: 59.8
+Visual Event Detection Segment-level F1: 55.0
+Audio-Visual Event Detection Segment-level F1: 51.5
+Segment-levelType@Avg. F1: 55.4
+Segment-level Event@Avg. F1: 55.8
+Audio Event Detection Event-level F1: 51.0
+Visual Event Detection Event-level F1: 51.1
+Audio-Visual Event Detection Event-level F1: 45.0
+Event-level Type@Avg. F1: 49.1
+Event-level Event@Avg. F1: 48.6
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:149: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Train Epoch: 32 [0/10000 (0%)]	Loss: 0.259858
+Train Epoch: 32 [800/10000 (8%)]	Loss: 0.293231
+Train Epoch: 32 [1600/10000 (16%)]	Loss: 0.280396
+Train Epoch: 32 [2400/10000 (24%)]	Loss: 0.243819
+Train Epoch: 32 [3200/10000 (32%)]	Loss: 0.259552
+Train Epoch: 32 [4000/10000 (40%)]	Loss: 0.226129
+Train Epoch: 32 [4800/10000 (48%)]	Loss: 0.269191
+Train Epoch: 32 [5600/10000 (56%)]	Loss: 0.250465
+Train Epoch: 32 [6400/10000 (64%)]	Loss: 0.237454
+Train Epoch: 32 [7200/10000 (72%)]	Loss: 0.230548
+Train Epoch: 32 [8000/10000 (80%)]	Loss: 0.270965
+Train Epoch: 32 [8800/10000 (88%)]	Loss: 0.264103
+Train Epoch: 32 [9600/10000 (96%)]	Loss: 0.267487
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/nn/functional.py:1352: UserWarning: dropout2d: Received a 3D input to dropout2d and assuming that channel-wise 1D dropout behavior is desired - input is interpreted as shape (N, C, L), where C is the channel dim. This behavior will change in a future release to interpret the input as one without a batch dimension, i.e. shape (C, H, W). To maintain the 1D channel-wise dropout behavior, please switch to using dropout1d instead.
+  warnings.warn("dropout2d: Received a 3D input to dropout2d and assuming that channel-wise "
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:84: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_a = df_a.loc[df_a['filename'] == df.iloc[batch_idx, :][0]]
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:100: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_v = df_v.loc[df_v['filename'] == df.iloc[batch_idx, :][0]]
+Audio Event Detection Segment-level F1: 59.3
+Visual Event Detection Segment-level F1: 55.3
+Audio-Visual Event Detection Segment-level F1: 51.8
+Segment-levelType@Avg. F1: 55.5
+Segment-level Event@Avg. F1: 55.4
+Audio Event Detection Event-level F1: 50.7
+Visual Event Detection Event-level F1: 51.4
+Audio-Visual Event Detection Event-level F1: 45.2
+Event-level Type@Avg. F1: 49.1
+Event-level Event@Avg. F1: 48.3
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:149: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Train Epoch: 33 [0/10000 (0%)]	Loss: 0.279833
+Train Epoch: 33 [800/10000 (8%)]	Loss: 0.248064
+Train Epoch: 33 [1600/10000 (16%)]	Loss: 0.310404
+Train Epoch: 33 [2400/10000 (24%)]	Loss: 0.326499
+Train Epoch: 33 [3200/10000 (32%)]	Loss: 0.240525
+Train Epoch: 33 [4000/10000 (40%)]	Loss: 0.268374
+Train Epoch: 33 [4800/10000 (48%)]	Loss: 0.252168
+Train Epoch: 33 [5600/10000 (56%)]	Loss: 0.262940
+Train Epoch: 33 [6400/10000 (64%)]	Loss: 0.261386
+Train Epoch: 33 [7200/10000 (72%)]	Loss: 0.270001
+Train Epoch: 33 [8000/10000 (80%)]	Loss: 0.264050
+Train Epoch: 33 [8800/10000 (88%)]	Loss: 0.285304
+Train Epoch: 33 [9600/10000 (96%)]	Loss: 0.306604
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/nn/functional.py:1352: UserWarning: dropout2d: Received a 3D input to dropout2d and assuming that channel-wise 1D dropout behavior is desired - input is interpreted as shape (N, C, L), where C is the channel dim. This behavior will change in a future release to interpret the input as one without a batch dimension, i.e. shape (C, H, W). To maintain the 1D channel-wise dropout behavior, please switch to using dropout1d instead.
+  warnings.warn("dropout2d: Received a 3D input to dropout2d and assuming that channel-wise "
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:84: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_a = df_a.loc[df_a['filename'] == df.iloc[batch_idx, :][0]]
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:100: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_v = df_v.loc[df_v['filename'] == df.iloc[batch_idx, :][0]]
+Audio Event Detection Segment-level F1: 59.4
+Visual Event Detection Segment-level F1: 55.5
+Audio-Visual Event Detection Segment-level F1: 52.0
+Segment-levelType@Avg. F1: 55.6
+Segment-level Event@Avg. F1: 55.5
+Audio Event Detection Event-level F1: 50.8
+Visual Event Detection Event-level F1: 51.6
+Audio-Visual Event Detection Event-level F1: 45.4
+Event-level Type@Avg. F1: 49.3
+Event-level Event@Avg. F1: 48.4
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:149: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Train Epoch: 34 [0/10000 (0%)]	Loss: 0.275768
+Train Epoch: 34 [800/10000 (8%)]	Loss: 0.351147
+Train Epoch: 34 [1600/10000 (16%)]	Loss: 0.235175
+Train Epoch: 34 [2400/10000 (24%)]	Loss: 0.290870
+Train Epoch: 34 [3200/10000 (32%)]	Loss: 0.238885
+Train Epoch: 34 [4000/10000 (40%)]	Loss: 0.249426
+Train Epoch: 34 [4800/10000 (48%)]	Loss: 0.291675
+Train Epoch: 34 [5600/10000 (56%)]	Loss: 0.264481
+Train Epoch: 34 [6400/10000 (64%)]	Loss: 0.256973
+Train Epoch: 34 [7200/10000 (72%)]	Loss: 0.263672
+Train Epoch: 34 [8000/10000 (80%)]	Loss: 0.269055
+Train Epoch: 34 [8800/10000 (88%)]	Loss: 0.250398
+Train Epoch: 34 [9600/10000 (96%)]	Loss: 0.304066
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/nn/functional.py:1352: UserWarning: dropout2d: Received a 3D input to dropout2d and assuming that channel-wise 1D dropout behavior is desired - input is interpreted as shape (N, C, L), where C is the channel dim. This behavior will change in a future release to interpret the input as one without a batch dimension, i.e. shape (C, H, W). To maintain the 1D channel-wise dropout behavior, please switch to using dropout1d instead.
+  warnings.warn("dropout2d: Received a 3D input to dropout2d and assuming that channel-wise "
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:84: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_a = df_a.loc[df_a['filename'] == df.iloc[batch_idx, :][0]]
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:100: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_v = df_v.loc[df_v['filename'] == df.iloc[batch_idx, :][0]]
+Audio Event Detection Segment-level F1: 59.7
+Visual Event Detection Segment-level F1: 55.2
+Audio-Visual Event Detection Segment-level F1: 51.7
+Segment-levelType@Avg. F1: 55.5
+Segment-level Event@Avg. F1: 55.7
+Audio Event Detection Event-level F1: 51.0
+Visual Event Detection Event-level F1: 51.3
+Audio-Visual Event Detection Event-level F1: 45.2
+Event-level Type@Avg. F1: 49.2
+Event-level Event@Avg. F1: 48.5
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:149: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Train Epoch: 35 [0/10000 (0%)]	Loss: 0.261177
+Train Epoch: 35 [800/10000 (8%)]	Loss: 0.236570
+Train Epoch: 35 [1600/10000 (16%)]	Loss: 0.261635
+Train Epoch: 35 [2400/10000 (24%)]	Loss: 0.236655
+Train Epoch: 35 [3200/10000 (32%)]	Loss: 0.260321
+Train Epoch: 35 [4000/10000 (40%)]	Loss: 0.264577
+Train Epoch: 35 [4800/10000 (48%)]	Loss: 0.261025
+Train Epoch: 35 [5600/10000 (56%)]	Loss: 0.295094
+Train Epoch: 35 [6400/10000 (64%)]	Loss: 0.281266
+Train Epoch: 35 [7200/10000 (72%)]	Loss: 0.254777
+Train Epoch: 35 [8000/10000 (80%)]	Loss: 0.245954
+Train Epoch: 35 [8800/10000 (88%)]	Loss: 0.256647
+Train Epoch: 35 [9600/10000 (96%)]	Loss: 0.247654
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/nn/functional.py:1352: UserWarning: dropout2d: Received a 3D input to dropout2d and assuming that channel-wise 1D dropout behavior is desired - input is interpreted as shape (N, C, L), where C is the channel dim. This behavior will change in a future release to interpret the input as one without a batch dimension, i.e. shape (C, H, W). To maintain the 1D channel-wise dropout behavior, please switch to using dropout1d instead.
+  warnings.warn("dropout2d: Received a 3D input to dropout2d and assuming that channel-wise "
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:84: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_a = df_a.loc[df_a['filename'] == df.iloc[batch_idx, :][0]]
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:100: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_v = df_v.loc[df_v['filename'] == df.iloc[batch_idx, :][0]]
+Audio Event Detection Segment-level F1: 59.5
+Visual Event Detection Segment-level F1: 55.2
+Audio-Visual Event Detection Segment-level F1: 51.7
+Segment-levelType@Avg. F1: 55.5
+Segment-level Event@Avg. F1: 55.5
+Audio Event Detection Event-level F1: 50.8
+Visual Event Detection Event-level F1: 51.3
+Audio-Visual Event Detection Event-level F1: 45.2
+Event-level Type@Avg. F1: 49.1
+Event-level Event@Avg. F1: 48.4
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:149: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Train Epoch: 36 [0/10000 (0%)]	Loss: 0.231375
+Train Epoch: 36 [800/10000 (8%)]	Loss: 0.277433
+Train Epoch: 36 [1600/10000 (16%)]	Loss: 0.245654
+Train Epoch: 36 [2400/10000 (24%)]	Loss: 0.267509
+Train Epoch: 36 [3200/10000 (32%)]	Loss: 0.294965
+Train Epoch: 36 [4000/10000 (40%)]	Loss: 0.257611
+Train Epoch: 36 [4800/10000 (48%)]	Loss: 0.275362
+Train Epoch: 36 [5600/10000 (56%)]	Loss: 0.262786
+Train Epoch: 36 [6400/10000 (64%)]	Loss: 0.262129
+Train Epoch: 36 [7200/10000 (72%)]	Loss: 0.268496
+Train Epoch: 36 [8000/10000 (80%)]	Loss: 0.239337
+Train Epoch: 36 [8800/10000 (88%)]	Loss: 0.275178
+Train Epoch: 36 [9600/10000 (96%)]	Loss: 0.256126
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/nn/functional.py:1352: UserWarning: dropout2d: Received a 3D input to dropout2d and assuming that channel-wise 1D dropout behavior is desired - input is interpreted as shape (N, C, L), where C is the channel dim. This behavior will change in a future release to interpret the input as one without a batch dimension, i.e. shape (C, H, W). To maintain the 1D channel-wise dropout behavior, please switch to using dropout1d instead.
+  warnings.warn("dropout2d: Received a 3D input to dropout2d and assuming that channel-wise "
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:84: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_a = df_a.loc[df_a['filename'] == df.iloc[batch_idx, :][0]]
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:100: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_v = df_v.loc[df_v['filename'] == df.iloc[batch_idx, :][0]]
+Audio Event Detection Segment-level F1: 59.6
+Visual Event Detection Segment-level F1: 55.2
+Audio-Visual Event Detection Segment-level F1: 51.7
+Segment-levelType@Avg. F1: 55.5
+Segment-level Event@Avg. F1: 55.6
+Audio Event Detection Event-level F1: 51.0
+Visual Event Detection Event-level F1: 51.3
+Audio-Visual Event Detection Event-level F1: 45.2
+Event-level Type@Avg. F1: 49.2
+Event-level Event@Avg. F1: 48.5
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:149: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Train Epoch: 37 [0/10000 (0%)]	Loss: 0.268417
+Train Epoch: 37 [800/10000 (8%)]	Loss: 0.282682
+Train Epoch: 37 [1600/10000 (16%)]	Loss: 0.260214
+Train Epoch: 37 [2400/10000 (24%)]	Loss: 0.331335
+Train Epoch: 37 [3200/10000 (32%)]	Loss: 0.263709
+Train Epoch: 37 [4000/10000 (40%)]	Loss: 0.288813
+Train Epoch: 37 [4800/10000 (48%)]	Loss: 0.286997
+Train Epoch: 37 [5600/10000 (56%)]	Loss: 0.243458
+Train Epoch: 37 [6400/10000 (64%)]	Loss: 0.275510
+Train Epoch: 37 [7200/10000 (72%)]	Loss: 0.258320
+Train Epoch: 37 [8000/10000 (80%)]	Loss: 0.265096
+Train Epoch: 37 [8800/10000 (88%)]	Loss: 0.258087
+Train Epoch: 37 [9600/10000 (96%)]	Loss: 0.244038
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/nn/functional.py:1352: UserWarning: dropout2d: Received a 3D input to dropout2d and assuming that channel-wise 1D dropout behavior is desired - input is interpreted as shape (N, C, L), where C is the channel dim. This behavior will change in a future release to interpret the input as one without a batch dimension, i.e. shape (C, H, W). To maintain the 1D channel-wise dropout behavior, please switch to using dropout1d instead.
+  warnings.warn("dropout2d: Received a 3D input to dropout2d and assuming that channel-wise "
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:84: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_a = df_a.loc[df_a['filename'] == df.iloc[batch_idx, :][0]]
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:100: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_v = df_v.loc[df_v['filename'] == df.iloc[batch_idx, :][0]]
+Audio Event Detection Segment-level F1: 59.5
+Visual Event Detection Segment-level F1: 55.2
+Audio-Visual Event Detection Segment-level F1: 51.7
+Segment-levelType@Avg. F1: 55.5
+Segment-level Event@Avg. F1: 55.6
+Audio Event Detection Event-level F1: 50.9
+Visual Event Detection Event-level F1: 51.3
+Audio-Visual Event Detection Event-level F1: 45.1
+Event-level Type@Avg. F1: 49.1
+Event-level Event@Avg. F1: 48.5
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:149: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Train Epoch: 38 [0/10000 (0%)]	Loss: 0.261805
+Train Epoch: 38 [800/10000 (8%)]	Loss: 0.250200
+Train Epoch: 38 [1600/10000 (16%)]	Loss: 0.281920
+Train Epoch: 38 [2400/10000 (24%)]	Loss: 0.286925
+Train Epoch: 38 [3200/10000 (32%)]	Loss: 0.335426
+Train Epoch: 38 [4000/10000 (40%)]	Loss: 0.256427
+Train Epoch: 38 [4800/10000 (48%)]	Loss: 0.274541
+Train Epoch: 38 [5600/10000 (56%)]	Loss: 0.244305
+Train Epoch: 38 [6400/10000 (64%)]	Loss: 0.255046
+Train Epoch: 38 [7200/10000 (72%)]	Loss: 0.253959
+Train Epoch: 38 [8000/10000 (80%)]	Loss: 0.290334
+Train Epoch: 38 [8800/10000 (88%)]	Loss: 0.285309
+Train Epoch: 38 [9600/10000 (96%)]	Loss: 0.247778
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/nn/functional.py:1352: UserWarning: dropout2d: Received a 3D input to dropout2d and assuming that channel-wise 1D dropout behavior is desired - input is interpreted as shape (N, C, L), where C is the channel dim. This behavior will change in a future release to interpret the input as one without a batch dimension, i.e. shape (C, H, W). To maintain the 1D channel-wise dropout behavior, please switch to using dropout1d instead.
+  warnings.warn("dropout2d: Received a 3D input to dropout2d and assuming that channel-wise "
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:84: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_a = df_a.loc[df_a['filename'] == df.iloc[batch_idx, :][0]]
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:100: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_v = df_v.loc[df_v['filename'] == df.iloc[batch_idx, :][0]]
+Audio Event Detection Segment-level F1: 59.6
+Visual Event Detection Segment-level F1: 55.1
+Audio-Visual Event Detection Segment-level F1: 51.6
+Segment-levelType@Avg. F1: 55.4
+Segment-level Event@Avg. F1: 55.6
+Audio Event Detection Event-level F1: 51.0
+Visual Event Detection Event-level F1: 51.2
+Audio-Visual Event Detection Event-level F1: 45.1
+Event-level Type@Avg. F1: 49.1
+Event-level Event@Avg. F1: 48.5
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:149: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Train Epoch: 39 [0/10000 (0%)]	Loss: 0.226349
+Train Epoch: 39 [800/10000 (8%)]	Loss: 0.286198
+Train Epoch: 39 [1600/10000 (16%)]	Loss: 0.307546
+Train Epoch: 39 [2400/10000 (24%)]	Loss: 0.263404
+Train Epoch: 39 [3200/10000 (32%)]	Loss: 0.274445
+Train Epoch: 39 [4000/10000 (40%)]	Loss: 0.250503
+Train Epoch: 39 [4800/10000 (48%)]	Loss: 0.344383
+Train Epoch: 39 [5600/10000 (56%)]	Loss: 0.228377
+Train Epoch: 39 [6400/10000 (64%)]	Loss: 0.269734
+Train Epoch: 39 [7200/10000 (72%)]	Loss: 0.257611
+Train Epoch: 39 [8000/10000 (80%)]	Loss: 0.239002
+Train Epoch: 39 [8800/10000 (88%)]	Loss: 0.268393
+Train Epoch: 39 [9600/10000 (96%)]	Loss: 0.283060
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/nn/functional.py:1352: UserWarning: dropout2d: Received a 3D input to dropout2d and assuming that channel-wise 1D dropout behavior is desired - input is interpreted as shape (N, C, L), where C is the channel dim. This behavior will change in a future release to interpret the input as one without a batch dimension, i.e. shape (C, H, W). To maintain the 1D channel-wise dropout behavior, please switch to using dropout1d instead.
+  warnings.warn("dropout2d: Received a 3D input to dropout2d and assuming that channel-wise "
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:84: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_a = df_a.loc[df_a['filename'] == df.iloc[batch_idx, :][0]]
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:100: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_v = df_v.loc[df_v['filename'] == df.iloc[batch_idx, :][0]]
+Audio Event Detection Segment-level F1: 59.5
+Visual Event Detection Segment-level F1: 55.2
+Audio-Visual Event Detection Segment-level F1: 51.6
+Segment-levelType@Avg. F1: 55.4
+Segment-level Event@Avg. F1: 55.6
+Audio Event Detection Event-level F1: 50.9
+Visual Event Detection Event-level F1: 51.3
+Audio-Visual Event Detection Event-level F1: 45.1
+Event-level Type@Avg. F1: 49.1
+Event-level Event@Avg. F1: 48.4
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:149: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Train Epoch: 40 [0/10000 (0%)]	Loss: 0.256386
+Train Epoch: 40 [800/10000 (8%)]	Loss: 0.327764
+Train Epoch: 40 [1600/10000 (16%)]	Loss: 0.249995
+Train Epoch: 40 [2400/10000 (24%)]	Loss: 0.252057
+Train Epoch: 40 [3200/10000 (32%)]	Loss: 0.238793
+Train Epoch: 40 [4000/10000 (40%)]	Loss: 0.244767
+Train Epoch: 40 [4800/10000 (48%)]	Loss: 0.229286
+Train Epoch: 40 [5600/10000 (56%)]	Loss: 0.270866
+Train Epoch: 40 [6400/10000 (64%)]	Loss: 0.309989
+Train Epoch: 40 [7200/10000 (72%)]	Loss: 0.240927
+Train Epoch: 40 [8000/10000 (80%)]	Loss: 0.251875
+Train Epoch: 40 [8800/10000 (88%)]	Loss: 0.273229
+Train Epoch: 40 [9600/10000 (96%)]	Loss: 0.256442
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/nn/functional.py:1352: UserWarning: dropout2d: Received a 3D input to dropout2d and assuming that channel-wise 1D dropout behavior is desired - input is interpreted as shape (N, C, L), where C is the channel dim. This behavior will change in a future release to interpret the input as one without a batch dimension, i.e. shape (C, H, W). To maintain the 1D channel-wise dropout behavior, please switch to using dropout1d instead.
+  warnings.warn("dropout2d: Received a 3D input to dropout2d and assuming that channel-wise "
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:84: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_a = df_a.loc[df_a['filename'] == df.iloc[batch_idx, :][0]]
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:100: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_v = df_v.loc[df_v['filename'] == df.iloc[batch_idx, :][0]]
+Audio Event Detection Segment-level F1: 59.5
+Visual Event Detection Segment-level F1: 55.1
+Audio-Visual Event Detection Segment-level F1: 51.6
+Segment-levelType@Avg. F1: 55.4
+Segment-level Event@Avg. F1: 55.5
+Audio Event Detection Event-level F1: 50.8
+Visual Event Detection Event-level F1: 51.2
+Audio-Visual Event Detection Event-level F1: 45.1
+Event-level Type@Avg. F1: 49.0
+Event-level Event@Avg. F1: 48.4
+CUDA extension for cauchy multiplication not found. Install by going to extensions/cauchy/ and running `python setup.py install`. This should speed up end-to-end training by 10-50%
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/nn/modules/transformer.py:282: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.self_attn.batch_first was not True(use batch_first for better inference performance)
+  warnings.warn(f"enable_nested_tensor is True, but self.use_nested_tensor is False because {why_not_sparsity_fast_path}")
+/people/cs/w/wxz220013/anaconda3/envs/llp/lib/python3.10/site-packages/torch/nn/functional.py:1352: UserWarning: dropout2d: Received a 3D input to dropout2d and assuming that channel-wise 1D dropout behavior is desired - input is interpreted as shape (N, C, L), where C is the channel dim. This behavior will change in a future release to interpret the input as one without a batch dimension, i.e. shape (C, H, W). To maintain the 1D channel-wise dropout behavior, please switch to using dropout1d instead.
+  warnings.warn("dropout2d: Received a 3D input to dropout2d and assuming that channel-wise "
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:84: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_a = df_a.loc[df_a['filename'] == df.iloc[batch_idx, :][0]]
+/people/cs/w/wxz220013/AVVP-ECCV20/main_avvp.py:100: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  df_vid_v = df_v.loc[df_v['filename'] == df.iloc[batch_idx, :][0]]
+Audio Event Detection Segment-level F1: 58.9
+Visual Event Detection Segment-level F1: 54.7
+Audio-Visual Event Detection Segment-level F1: 49.8
+Segment-levelType@Avg. F1: 54.4
+Segment-level Event@Avg. F1: 55.5
+Audio Event Detection Event-level F1: 49.7
+Visual Event Detection Event-level F1: 51.1
+Audio-Visual Event Detection Event-level F1: 43.1
+Event-level Type@Avg. F1: 48.0
+Event-level Event@Avg. F1: 48.2

@@ -1,0 +1,112 @@
+MMIL_Net MMIL_Net(
+  (fc_prob): Linear(in_features=512, out_features=25, bias=True)
+  (fc_frame_att): Linear(in_features=512, out_features=25, bias=True)
+  (fc_av_att): Linear(in_features=512, out_features=25, bias=True)
+  (fc_a): Linear(in_features=128, out_features=512, bias=True)
+  (fc_v): Linear(in_features=2048, out_features=512, bias=True)
+  (fc_st): Linear(in_features=512, out_features=512, bias=True)
+  (fc_fusion): Linear(in_features=1024, out_features=512, bias=True)
+  (audio_encoder): TransformerEncoder(
+    (layers): ModuleList(
+      (0): TransformerEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (out_proj): NonDynamicallyQuantizableLinear(in_features=512, out_features=512, bias=True)
+        )
+        (linear1): Linear(in_features=512, out_features=512, bias=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+        (linear2): Linear(in_features=512, out_features=512, bias=True)
+        (norm1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        (norm2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        (dropout1): Dropout(p=0.1, inplace=False)
+        (dropout2): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (visual_encoder): TransformerEncoder(
+    (layers): ModuleList(
+      (0): TransformerEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (out_proj): NonDynamicallyQuantizableLinear(in_features=512, out_features=512, bias=True)
+        )
+        (linear1): Linear(in_features=512, out_features=512, bias=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+        (linear2): Linear(in_features=512, out_features=512, bias=True)
+        (norm1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        (norm2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        (dropout1): Dropout(p=0.1, inplace=False)
+        (dropout2): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (cmt_encoder): Encoder(
+    (layers): ModuleList(
+      (0): CMTLayer(
+        (self_attn): MultiheadAttention(
+          (out_proj): NonDynamicallyQuantizableLinear(in_features=512, out_features=512, bias=True)
+        )
+        (linear1): Linear(in_features=512, out_features=512, bias=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+        (linear2): Linear(in_features=512, out_features=512, bias=True)
+        (norm1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        (norm2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        (dropout1): Dropout(p=0.1, inplace=False)
+        (dropout2): Dropout(p=0.1, inplace=False)
+        (activation): ReLU()
+      )
+    )
+    (norm1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+    (norm2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+  )
+  (hat_encoder): Encoder(
+    (layers): ModuleList(
+      (0): HANLayer(
+        (self_attn): MultiheadAttention(
+          (out_proj): NonDynamicallyQuantizableLinear(in_features=512, out_features=512, bias=True)
+        )
+        (cm_attn): MultiheadAttention(
+          (out_proj): NonDynamicallyQuantizableLinear(in_features=512, out_features=512, bias=True)
+        )
+        (linear1): Linear(in_features=512, out_features=512, bias=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+        (linear2): Linear(in_features=512, out_features=512, bias=True)
+        (norm1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        (norm2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        (dropout11): Dropout(p=0.1, inplace=False)
+        (dropout12): Dropout(p=0.1, inplace=False)
+        (dropout2): Dropout(p=0.1, inplace=False)
+        (activation): ReLU()
+      )
+    )
+    (norm1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+    (norm2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+  )
+  (mamba_encoder): Encoder_Mamba(
+    (layers): ModuleList(
+      (0): Mamba(
+        (in_proj_a): Linear(in_features=512, out_features=2048, bias=False)
+        (in_proj_v): Linear(in_features=512, out_features=2048, bias=False)
+        (conv1d_a): Conv1d(1024, 1024, kernel_size=(4,), stride=(1,), padding=(3,), groups=1024)
+        (conv1d_v): Conv1d(1024, 1024, kernel_size=(4,), stride=(1,), padding=(3,), groups=1024)
+        (act): SiLU()
+        (x_proj_a): Linear(in_features=1024, out_features=64, bias=False)
+        (x_proj_v): Linear(in_features=1024, out_features=64, bias=False)
+        (dt_proj_a): Linear(in_features=32, out_features=1024, bias=True)
+        (dt_proj_v): Linear(in_features=32, out_features=1024, bias=True)
+        (out_proj_a): Linear(in_features=1024, out_features=512, bias=False)
+        (out_proj_v): Linear(in_features=1024, out_features=512, bias=False)
+      )
+    )
+    (norm1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+    (norm2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+  )
+)
+Audio Event Detection Segment-level F1: 50.1
+Visual Event Detection Segment-level F1: 48.7
+Audio-Visual Event Detection Segment-level F1: 37.1
+Segment-levelType@Avg. F1: 45.3
+Segment-level Event@Avg. F1: 49.0
+Audio Event Detection Event-level F1: 38.2
+Visual Event Detection Event-level F1: 38.0
+Audio-Visual Event Detection Event-level F1: 26.5
+Event-level Type@Avg. F1: 34.2
+Event-level Event@Avg. F1: 35.9
