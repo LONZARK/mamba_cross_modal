@@ -8,7 +8,7 @@ from nets.net_audiovisual import MMIL_Net
 from utils.eval_metrics import segment_level, event_level
 import pandas as pd
 
-def train(args, model, train_loader, optimizer, criterion, epoch):
+def train(args, model, train_loader, optimizer, criterion, mamba_flag, crossmodal, epoch):
     model.train()
     for batch_idx, sample in enumerate(train_loader):
         audio, video, video_st, target = sample['audio'].to('cuda'), sample['video_s'].to('cuda'), sample['video_st'].to('cuda'), sample['label'].type(torch.FloatTensor).to('cuda')
@@ -20,7 +20,7 @@ def train(args, model, train_loader, optimizer, criterion, epoch):
         # exit()
         
         optimizer.zero_grad()
-        output, a_prob, v_prob, _ = model(audio, video, video_st)
+        output, a_prob, v_prob, _ = model(audio, video, video_st, mamba_flag, crossmodal)
         output.clamp_(min=1e-7, max=1 - 1e-7)
         a_prob.clamp_(min=1e-7, max=1 - 1e-7)
         v_prob.clamp_(min=1e-7, max=1 - 1e-7)
@@ -43,7 +43,7 @@ def train(args, model, train_loader, optimizer, criterion, epoch):
                        100. * batch_idx / len(train_loader), loss.item()))
 
 
-def eval(model, val_loader, set):
+def eval(model, val_loader, set, mamba_flag, crossmodal):
     categories = ['Speech', 'Car', 'Cheering', 'Dog', 'Cat', 'Frying_(food)',
                   'Basketball_bounce', 'Fire_alarm', 'Chainsaw', 'Cello', 'Banjo',
                   'Singing', 'Chicken_rooster', 'Violin_fiddle', 'Vacuum_cleaner',
@@ -70,7 +70,7 @@ def eval(model, val_loader, set):
     with torch.no_grad():
         for batch_idx, sample in enumerate(val_loader):
             audio, video, video_st, target = sample['audio'].to('cuda'), sample['video_s'].to('cuda'),sample['video_st'].to('cuda'), sample['label'].to('cuda')
-            output, a_prob, v_prob, frame_prob = model(audio, video, video_st)
+            output, a_prob, v_prob, frame_prob = model(audio, video, video_st, mamba_flag, crossmodal)
             o = (output.cpu().detach().numpy() >= 0.5).astype(np.int_)
 
             Pa = frame_prob[0, :, 0, :].cpu().detach().numpy()
@@ -196,13 +196,20 @@ def main():
         help="save model name")
     parser.add_argument(
         '--gpu', type=str, default='0', help='gpu device number')
+        
+    parser.add_argument(
+        '--mamba_flag', type=str, default='None', help='if we plan to replace to mamba')
+    parser.add_argument(
+        '--crossmodal', type=str, default='None', help='if we plan to replace to crossmamba')
+
     args = parser.parse_args()
+
 
     os.environ['CUDA_VISIBLE_DEVICES'] = args.gpu
     torch.manual_seed(args.seed)
 
     if args.model == 'MMIL_Net':
-        model = MMIL_Net().to('cuda')
+        model = MMIL_Net(mamba_flag=args.mamba_flag, crossmodal=args.crossmodal).to('cuda')
         # print('MMIL_Net', model)
 
     else:
@@ -222,9 +229,9 @@ def main():
         criterion = nn.BCELoss()
         best_F = 0
         for epoch in range(1, args.epochs + 1):
-            train(args, model, train_loader, optimizer, criterion, epoch=epoch)
+            train(args, model, train_loader, optimizer, criterion, args.mamba_flag, args.crossmodal, epoch=epoch)
             scheduler.step(epoch)
-            F = eval(model, val_loader, args.label_val)
+            F = eval(model, val_loader, args.label_val, args.mamba_flag, args.crossmodal)
             if F >= best_F:
                 best_F = F
                 torch.save(model.state_dict(), args.model_save_dir + args.checkpoint + ".pt")
@@ -234,8 +241,9 @@ def main():
                 ToTensor()]))
         test_loader = DataLoader(test_dataset, batch_size=1, shuffle=False, num_workers=1, pin_memory=True)
         model.load_state_dict(torch.load(args.model_save_dir + args.checkpoint + ".pt"))
-        eval(model, test_loader, args.label_val)
+        eval(model, test_loader, args.label_val, args.mamba_flag, args.crossmodal)
     else:
+
         test_dataset = LLP_dataset(label=args.label_test, audio_dir=args.audio_dir, video_dir=args.video_dir,  st_dir=args.st_dir, transform = transforms.Compose([
                                                ToTensor()]))
         test_loader = DataLoader(test_dataset, batch_size=1, shuffle=False, num_workers=1, pin_memory=True)
@@ -248,6 +256,7 @@ def main():
         # model.load_state_dict(state_dict, strict=False)        
         model.load_state_dict(torch.load(args.model_save_dir + args.checkpoint + ".pt"))
 
-        eval(model, test_loader, args.label_test)
+        eval(model, test_loader, args.label_test, args.mamba_flag, args.crossmodal)
+
 if __name__ == '__main__':
     main()

@@ -1,0 +1,11 @@
+2222222222222222222
+Audio Event Detection Segment-level F1: 12.3
+Visual Event Detection Segment-level F1: 50.0
+Audio-Visual Event Detection Segment-level F1: 19.3
+Segment-levelType@Avg. F1: 27.2
+Segment-level Event@Avg. F1: 28.3
+Audio Event Detection Event-level F1: 7.0
+Visual Event Detection Event-level F1: 46.3
+Audio-Visual Event Detection Event-level F1: 15.6
+Event-level Type@Avg. F1: 23.0
+Event-level Event@Avg. F1: 22.1

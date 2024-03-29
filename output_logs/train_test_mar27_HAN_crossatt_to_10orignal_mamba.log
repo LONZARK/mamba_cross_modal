@@ -919,6 +919,7 @@ Visual Event Detection Event-level F1: 47.9
 Audio-Visual Event Detection Event-level F1: 34.1
 Event-level Type@Avg. F1: 41.9
 Event-level Event@Avg. F1: 43.1
+
 Audio Event Detection Segment-level F1: 51.2
 Visual Event Detection Segment-level F1: 52.6
 Audio-Visual Event Detection Segment-level F1: 39.4
