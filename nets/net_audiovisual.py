@@ -11,7 +11,7 @@ import math
 
 import sys
 sys.path.append('/home/jxl220096/code/ai_assignment')
-from mamba.mamba_ssm.modules.mamba_simple import Mamba
+from mamba.mamba_ssm.modules.mamba_simple import Mamba_mutilModal
 
 
 def _get_clones(module, N):
@@ -130,8 +130,8 @@ class HANLayer(nn.Module):
         # Add mamba layer
         if self.mamba_flag != 'None':
             mamba_params = {'d_model_a': 512, 'd_model_v': 512, 'd_state': 16, 'd_conv': 4, 'expand': 2, 'layer_idx': 0}
-            self.mamba = HAN_Encoder(Mamba(**mamba_params, crossmodal=self.crossmodal), \
-                mamba_flag=self.mamba_flag, crossmodal=self.crossmodal, num_layers=1)
+            self.mamba = HAN_Encoder(Mamba_mutilModal(**mamba_params, crossmodal=self.crossmodal), \
+                mamba_flag=self.mamba_flag, crossmodal=self.crossmodal, num_layers=5)
 
     def forward(self, src_q, src_v, src_mask=None, src_key_padding_mask=None):
         """Pass the input through the encoder layer.
