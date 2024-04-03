@@ -12,15 +12,11 @@ def train(args, model, train_loader, optimizer, criterion, mamba_flag, crossmoda
     model.train()
     for batch_idx, sample in enumerate(train_loader):
         audio, video, video_st, target = sample['audio'].to('cuda'), sample['video_s'].to('cuda'), sample['video_st'].to('cuda'), sample['label'].type(torch.FloatTensor).to('cuda')
-
-        # print('audio', audio)
-        # print('video', video)
-        # print('video_st', video_st)
-        # print('target', target)
-        # exit()
         
         optimizer.zero_grad()
         output, a_prob, v_prob, _ = model(audio, video, video_st, mamba_flag, crossmodal)
+
+
         output.clamp_(min=1e-7, max=1 - 1e-7)
         a_prob.clamp_(min=1e-7, max=1 - 1e-7)
         v_prob.clamp_(min=1e-7, max=1 - 1e-7)
@@ -32,6 +28,25 @@ def train(args, model, train_loader, optimizer, criterion, mamba_flag, crossmoda
         Pa = a * target + (1 - a) * 0.5
         Pv = v * target + (1 - v) * 0.5
 
+
+        # tensors_to_check = {
+        #     'a_prob': a_prob,
+        #     'v_prob': v_prob,
+        #     'output': output,
+        #     'Pa': Pa,
+        #     'Pv': Pv,
+        #     'target': target
+        # }
+
+        # tensors_to_check_list = []
+        # for name, tensor in tensors_to_check.items():
+        #     if torch.isnan(tensor).any():
+        #         print(f"Tensor '{name}' contains NaN values.")
+        #         tensors_to_check_list.append(1)
+        #     if torch.isinf(tensor).any():
+        #         print(f"Tensor '{name}' contains Inf values.")
+        #         tensors_to_check_list.append(1)
+
         # individual guided learning
         loss =  criterion(a_prob, Pa) + criterion(v_prob, Pv) + criterion(output, target) 
 
@@ -40,7 +55,7 @@ def train(args, model, train_loader, optimizer, criterion, mamba_flag, crossmoda
         if batch_idx % args.log_interval == 0:
             print('Train Epoch: {} [{}/{} ({:.0f}%)]\tLoss: {:.6f}'.format(
                 epoch, batch_idx * len(audio), len(train_loader.dataset),
-                       100. * batch_idx / len(train_loader), loss.item()))
+                    100. * batch_idx / len(train_loader), loss.item()))
 
 
 def eval(model, val_loader, set, mamba_flag, crossmodal):
@@ -190,17 +205,19 @@ def main():
     parser.add_argument('--log-interval', type=int, default=50, metavar='N',
                         help='how many batches to wait before logging training status')
     parser.add_argument(
-        "--model_save_dir", type=str, default='models/', help="model save dir")
+        "--model_save_dir", type=str, default=None, help="model save dir")
     parser.add_argument(
         "--checkpoint", type=str, default='MMIL_Net',
         help="save model name")
     parser.add_argument(
         '--gpu', type=str, default='0', help='gpu device number')
-        
+       
     parser.add_argument(
         '--mamba_flag', type=str, default='None', help='if we plan to replace to mamba')
     parser.add_argument(
-        '--crossmodal', type=str, default='None', help='if we plan to replace to crossmamba')
+        '--crossmodal', type=str, default='None', help='')
+    parser.add_argument(
+        '--mamba_layers', type=int, default=1, help='')
 
     args = parser.parse_args()
 
@@ -209,11 +226,19 @@ def main():
     torch.manual_seed(args.seed)
 
     if args.model == 'MMIL_Net':
-        model = MMIL_Net(mamba_flag=args.mamba_flag, crossmodal=args.crossmodal).to('cuda')
+        torch.autograd.set_detect_anomaly(True)
+        model = MMIL_Net(mamba_flag=args.mamba_flag, crossmodal=args.crossmodal, mamba_layers = args.mamba_layers).to('cuda')
         # print('MMIL_Net', model)
 
     else:
         raise ('not recognized')
+
+    if args.model_save_dir is None:
+        dir_name = 'model_' + args.mamba_flag.replace(' ', '_') +'/'
+        args.model_save_dir = dir_name
+    if not os.path.exists(args.model_save_dir):
+        os.makedirs(args.model_save_dir)
+        print(f"Directory {args.model_save_dir} created.")
 
     if args.mode == 'train':
         print('111111111111')
@@ -228,6 +253,8 @@ def main():
         scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=10, gamma=0.1)
         criterion = nn.BCELoss()
         best_F = 0
+
+
         for epoch in range(1, args.epochs + 1):
             train(args, model, train_loader, optimizer, criterion, args.mamba_flag, args.crossmodal, epoch=epoch)
             scheduler.step(epoch)
@@ -235,6 +262,8 @@ def main():
             if F >= best_F:
                 best_F = F
                 torch.save(model.state_dict(), args.model_save_dir + args.checkpoint + ".pt")
+
+                
     elif args.mode == 'val':
         test_dataset = LLP_dataset(label=args.label_val, audio_dir=args.audio_dir, video_dir=args.video_dir,
                                     st_dir=args.st_dir, transform=transforms.Compose([
