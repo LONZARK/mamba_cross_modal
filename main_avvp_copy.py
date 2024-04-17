@@ -4,7 +4,7 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 from dataloader import *
-from nets.net_audiovisual import MMIL_Net
+from nets.net_audiovisual_copy import MMIL_Net
 from utils.eval_metrics import segment_level, event_level
 import pandas as pd
 
@@ -234,13 +234,14 @@ def main():
         raise ('not recognized')
 
     if args.model_save_dir is None:
-        dir_name = 'model_' + args.mamba_flag.replace(' ', '_') + '/'
+        dir_name = 'model_' + args.mamba_flag.replace(' ', '_')
         args.model_save_dir = dir_name
     if not os.path.exists(args.model_save_dir):
         os.makedirs(args.model_save_dir)
         print(f"Directory {args.model_save_dir} created.")
 
     if args.mode == 'train':
+        print('111111111111')
         train_dataset = LLP_dataset(label=args.label_train, audio_dir=args.audio_dir, video_dir=args.video_dir, st_dir=args.st_dir, transform = transforms.Compose([
                                                ToTensor()]))
         val_dataset = LLP_dataset(label=args.label_val, audio_dir=args.audio_dir, video_dir=args.video_dir, st_dir=args.st_dir, transform = transforms.Compose([
@@ -260,7 +261,7 @@ def main():
             F = eval(model, val_loader, args.label_val, args.mamba_flag, args.crossmodal)
             if F >= best_F:
                 best_F = F
-                torch.save(model.state_dict(), dir_name + args.checkpoint + ".pt")
+                torch.save(model.state_dict(), args.model_save_dir + args.checkpoint + ".pt")
 
                 
     elif args.mode == 'val':
@@ -268,7 +269,7 @@ def main():
                                     st_dir=args.st_dir, transform=transforms.Compose([
                 ToTensor()]))
         test_loader = DataLoader(test_dataset, batch_size=1, shuffle=False, num_workers=1, pin_memory=True)
-        model.load_state_dict(torch.load(dir_name + args.checkpoint + ".pt"))
+        model.load_state_dict(torch.load(args.model_save_dir + args.checkpoint + ".pt"))
         eval(model, test_loader, args.label_val, args.mamba_flag, args.crossmodal)
     else:
 
@@ -282,7 +283,7 @@ def main():
         #     if key not in model.state_dict():
         #         del state_dict[key]
         # model.load_state_dict(state_dict, strict=False)        
-        model.load_state_dict(torch.load(dir_name + args.checkpoint + ".pt"))
+        model.load_state_dict(torch.load(args.model_save_dir + args.checkpoint + ".pt"))
 
         eval(model, test_loader, args.label_test, args.mamba_flag, args.crossmodal)
 
