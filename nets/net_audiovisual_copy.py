@@ -12,7 +12,7 @@ import time
 # from nets.ViS4mer_mamba import S4
 
 import sys
-sys.path.append('/people/cs/w/wxz220013/ai_assignment')
+sys.path.append('/home/jxl220096/code/ai_assignment')
 from mamba.mamba_ssm.modules.mamba_simple import Mamba_mutilModal, Mamba
 
 
@@ -106,26 +106,22 @@ class HANLayer(nn.Module):
         self.mamba_flag = mamba_flag
 
         # Add mamba layer
-        if self.mamba_flag != 'None':
-            mamba_params = {'d_model_a': 512, 'd_model_v': 512, 'd_state': 16, 'd_conv': 4, 'expand': 2, 'layer_idx': 0}
-            self.mamba = Mamba_mutilModal(**mamba_params)
 
-            ori_mamba_params = {'d_model': 512, 'd_state': 16, 'd_conv': 4, 'expand': 2, 'layer_idx': 0}
-            # self.ori_mamba = Mamba(**ori_mamba_params)
-            self.ori_mamba_left = Mamba(**ori_mamba_params)
-            self.ori_mamba_right = Mamba(**ori_mamba_params)
-            self.ori_mamba_up = Mamba(**ori_mamba_params)
-            self.ori_mamba_down = Mamba(**ori_mamba_params)
-            # concat_mamba_params = {'d_model': 1024, 'd_state': 16, 'd_conv': 4, 'expand': 2, 'layer_idx': 0}
-            # self.concat_mamba = Mamba(**concat_mamba_params)
+        mamba_params = {'d_model_a': 512, 'd_model_v': 512, 'd_state': 16, 'd_conv': 4, 'expand': 2, 'layer_idx': 0}
+        self.mamba = Mamba_mutilModal(**mamba_params)
+
+        ori_mamba_params = {'d_model': 512, 'd_state': 16, 'd_conv': 4, 'expand': 2, 'layer_idx': 0}
+        self.ori_mamba_left = Mamba(**ori_mamba_params)
+        self.ori_mamba_right = Mamba(**ori_mamba_params)
+        self.ori_mamba_up = Mamba(**ori_mamba_params)
+        self.ori_mamba_down = Mamba(**ori_mamba_params)
 
         self.fusion_layer = nn.Linear(1024, 512)
-        # self.conv1d = nn.Conv1d(in_channels=512, out_channels=512, kernel_size=10, groups=512)
-        self.output_proj_layer = nn.Linear(10, 1)
+        self.output_proj_layer = nn.Linear(160, 10)
+        self.conv1d = nn.Conv1d(in_channels=512, out_channels=512, kernel_size=10, groups=512)
+        # concat_mamba_params = {'d_model': 1024, 'd_state': 16, 'd_conv': 4, 'expand': 2, 'layer_idx': 0}
+        # self.concat_mamba = Mamba(**concat_mamba_params)
 
-        self.linears = nn.ModuleList([
-            nn.Linear(i, 1) for i in range(11)
-        ])
 
         # if self.mamba_flag == 'han_cmatt_to_mamba - hidden_state_simple' or 'han selfatt to mamba - hidden_state_simple':
         #     self.hidden_state_fuse = HiddenFusion_MambaBlock(fuse='simple', return_hidden=False)
@@ -160,155 +156,76 @@ class HANLayer(nn.Module):
         #     src2 = self.self_attn(src_q, src_q, src_q, attn_mask=src_mask,
         #                           key_padding_mask=src_key_padding_mask)[0]
 
-        # if self.mamba_flag == 'han cmatt to crossmamba': 
-        #     src1, _ = self.mamba(src_q_mamba, src_v_mamba)
-        #     src2 = self.self_attn(src_q, src_q, src_q, attn_mask=src_mask,
-        #                         key_padding_mask=src_key_padding_mask)[0]
-        #     src1 = src1.permute(1, 0, 2) 
-
-        # if self.mamba_flag == 'han selfatt to crossmamba': 
-        #     src1 = self.cm_attn(src_q, src_v, src_v, attn_mask=src_mask,
-        #                       key_padding_mask=src_key_padding_mask)[0]  
-        #     src2, _ = self.mamba(src_q_mamba, src_v_mamba)
-        #     src2 = src2.permute(1, 0, 2) 
-
-        # if self.mamba_flag == 'han cmatt to orimamba': 
-        #     src1 = self.ori_mamba(src_q_mamba).permute(1, 0, 2)
-        #     src2 = self.self_attn(src_q, src_q, src_q, attn_mask=src_mask,
-        #                         key_padding_mask=src_key_padding_mask)[0]
-
-        # if self.mamba_flag == 'han selfatt to orimamba': 
-        #     src1 = self.cm_attn(src_q, src_v, src_v, attn_mask=src_mask,
-        #                       key_padding_mask=src_key_padding_mask)[0]  
-        #     src2 = self.ori_mamba(src_q_mamba).permute(1, 0, 2)
-
-        # if self.mamba_flag == 'han_cmatt_to_mamba - hidden_state_simple' or 'han_cmatt_to_mamba - hidden_state_dynamic':
-        #     src1, _ = self.hidden_state_fuse(src_q, src_v)
-        #     src2 = self.self_attn(src_q, src_q, src_q, attn_mask=src_mask,
-        #                         key_padding_mask=src_key_padding_mask)[0] 
-
-        # if self.mamba_flag == 'han selfatt to mamba - hidden_state_simple' or 'han_cmatt_to_mamba - hidden_state_dynamic': 
-        #     src1 = self.cm_attn(src_q, src_v, src_v, attn_mask=src_mask,
-        #                       key_padding_mask=src_key_padding_mask)[0]  
-        #     src2, _ = self.hidden_state_fuse(src_q, src_v)
-
-        # if self.mamba_flag == 'only_orimamba':
-        #     src1 = self.ori_mamba(src_q_mamba)
-        #     src2 = self.ori_mamba(src_q_mamba)
-        #     src1 = src1.permute(1, 0, 2)
-        #     src2 = src2.permute(1, 0, 2)
-
-        # if self.mamba_flag == 'only_crossmamba':
-        #     src1 = self.mamba(src_q_mamba, src_v_mamba)
-        #     src2 = self.mamba(src_q_mamba, src_v_mamba)
-        #     src1 = src1.permute(1, 0, 2)
-        #     src2 = src2.permute(1, 0, 2)
 
 
-        # # if self.mamba_flag == 'add_linescan_lp':
-        # # if self.mamba_flag == 'times_linescan_lp':
-        # if self.mamba_flag == 'lp_linescan_lp':
-   
-        #     # audio_video_matrix = self.expand(src_q_mamba, src_v_mamba) # Creat a matrix,  #torch.Size([16, 10, 10, 512])
-        #     audio_video_matrix = self.expand_linear_projection(src_q_mamba, src_v_mamba) # Creat a matrix,  #torch.Size([16, 10, 10, 512])
+        audio_video_matrix = self.expand(src_q_mamba, src_v_mamba) # Creat a matrix,  #torch.Size([16, 10, 10, 512])
+        # audio_video_matrix = self.expand_linear_projection(src_q_mamba, src_v_mamba) # Creat a matrix,  #torch.Size([16, 10, 10, 512])
+        batch_size, height, width, dim = audio_video_matrix.size()
 
-        #     batch_size = audio_video_matrix.size(0)
+        # # --- Scan in each line / column
+        # audio_matrix = audio_video_matrix.view(-1, 10, 512) 
+        # output_audio = self.ori_mamba(audio_matrix)
 
-        #     # --- Scan in each line / column
-        #     audio_matrix = audio_video_matrix.view(-1, 10, 512) 
-        #     output_audio = self.ori_mamba(audio_matrix)
+        # # audio_features = output_audio.view(batch_size, 10, 10, 512)[:, :, -1, :]
+        # temp_audio_features = output_audio.view(batch_size, 10, 10, 512)
 
-        #     # # TODO: Only keep the last dimension
-        #     # # audio_features = output_audio.view(batch_size, 10, 10, 512)[:, :, -1, :]
-
-        #     # TODO: Change to linear Projection
-        #     reshaped_audio = output_audio.view(-1, 10)
-        #     compressed_audio = self.output_proj_layer(reshaped_audio)
-        #     audio_features = compressed_audio.view(batch_size, 10, 512, 1)#.squeeze(3)
-
-        #     # # --- Scan in diagonals --------
-        #     # diagonals = torch.diagonal(audio_video_matrix, dim1=1, dim2=2)
-        #     # diagonals = diagonals.permute(0, 2, 1)
-        #     # audio_features = self.ori_mamba(diagonals)
+        # TODO: calculate attention 
+        # k = temp_audio_features.view(batch_size, height * 10, dim)
+        # v = k
+        # q = src_q_mamba
+        # attention_scores = torch.bmm(q, k.transpose(1, 2)) / (dim ** 0.5)
+        # if src_mask is not None:
+        #     attention_scores = attention_scores.masked_fill(src_mask == 0, float('-inf'))
+        # attention_probs = F.softmax(attention_scores, dim=-1)
+        # if src_key_padding_mask is not None:
+        #     attention_probs = attention_probs.masked_fill(src_key_padding_mask.unsqueeze(1).unsqueeze(2), 0)
+        
+        # audio_features = torch.bmm(attention_probs, v)
 
 
-        #     src1 = audio_features.permute(1, 0, 2)
-        #     # src2 = self.cm_attn(src_q, src_v, src_v, attn_mask=src_mask,
-        #     #                       key_padding_mask=src_key_padding_mask)[0]
+        # # --- Scan cross
+        batch_size, height, width, dim = audio_video_matrix.size()
+        updated_audio_video_matrix = audio_video_matrix.clone()
 
-        #     src2 = self.self_attn(src_q, src_q, src_q, attn_mask=src_mask,
-        #                         key_padding_mask=src_key_padding_mask)[0] 
+        for i in range(height):
 
-        if self.mamba_flag == 'lp_crossscan_att_add':
+            element_in_left = audio_video_matrix[:, i, :, :][:, :i+1, :]
+            element_in_right = audio_video_matrix[:, i, :, :][:, i:, :]
+            element_in_up = audio_video_matrix[:, :, i, :][:, :i+1, :]
+            element_in_down = audio_video_matrix[:, :, i, :][:, i:, :]
 
-            # audio_video_matrix = self.expand(src_q_mamba, src_v_mamba) # Creat a matrix [16, 10, 10, 512]
-            audio_video_matrix = self.expand_linear_projection(src_q_mamba, src_v_mamba) # Creat a matrix,  #torch.Size([16, 10, 10, 512])
+            reversed_right = torch.flip(element_in_right, dims=[1])
+            reversed_down = torch.flip(element_in_down, dims=[1])
 
-            batch_size, height, width, dim = audio_video_matrix.size()
-            updated_audio_video_matrix = audio_video_matrix.clone()
+            mamba_left = self.ori_mamba_left(element_in_left)[:, -1:, :]
+            mamba_right = self.ori_mamba_right(reversed_right)[:, -1:, :]
+            mamba_up = self.ori_mamba_up(element_in_up)[:, -1:, :]
+            mamba_down = self.ori_mamba_down(reversed_down)[:, -1:, :]
 
-            for i in range(height):
+            result = mamba_left + mamba_right + mamba_up + mamba_down
+            updated_audio_video_matrix[:, i, i, :] = result[:, 0, :]
 
-                element_in_left = audio_video_matrix[:, i, :, :][:, :i+1, :]
-                element_in_right = audio_video_matrix[:, i, :, :][:, i:, :]
-                element_in_up = audio_video_matrix[:, :, i, :][:, :i+1, :]
-                element_in_down = audio_video_matrix[:, :, i, :][:, i:, :]
+        audio_features = torch.diagonal(updated_audio_video_matrix, dim1=1, dim2=2)
 
-                reversed_right = torch.flip(element_in_right, dims=[1])
-                reversed_down = torch.flip(element_in_down, dims=[1])
+        # --- Scan in diagonals --------
+        # diagonals = torch.diagonal(audio_video_matrix, dim1=1, dim2=2)
+        # diagonals = diagonals.permute(0, 2, 1)
+        # audio_features = self.ori_mamba(diagonals)
 
-                mamba_left = self.ori_mamba_left(element_in_left)
-                mamba_right = self.ori_mamba_right(reversed_right)
-                mamba_up = self.ori_mamba_up(element_in_up)
-                mamba_down = self.ori_mamba_down(reversed_down)
+        # video_matrix = audio_video_matrix.permute(0, 2, 1, 3).contiguous().view(-1, 10, 512)
+        # output_video = self.ori_mamba(video_matrix)
+        # video_features = output_video.view(batch_size, 10, 10, 512)[:, :, -1, :] 
 
-                # # TODO: only keep the last dimension
-                # mamba_left = mamba_left[:, -1:, :]
-                # mamba_right = mamba_right[:, -1:, :]
-                # mamba_up = mamba_up[:, -1:, :]
-                # mamba_down = mamba_down[:, -1:, :]
+        # src2 = video_features.permute(1, 0, 2)
+        # src1 = audio_features.permute(1, 0, 2)
 
-                # # TODO: change to linear projection
-                # linear_layer_left = self.linears[i]
-                # linear_layer_up = self.linears[i]
-                # linear_layer_right = self.linears[height - i + 1]
-                # linear_layer_down = self.linears[height - i + 1]
+        src1 = audio_features.permute(2, 0, 1)
 
-                # mamba_left = linear_layer_left(element_in_left)
-                # mamba_right = linear_layer_right(reversed_right)
-                # mamba_up = linear_layer_up(element_in_up)
-                # mamba_down = linear_layer_down(reversed_down)
+        # src2 = self.cm_attn(src_q, src_v, src_v, attn_mask=src_mask,
+        #                       key_padding_mask=src_key_padding_mask)[0]
 
-                # TODO: change to calculate attention
-                
-                q = audio_video_matrix[:, i, :, :][:, i, :]
-
-                logits_left = torch.matmul(q, mamba_left.transpose(-2, -1))
-                logits_right = torch.matmul(q, mamba_right.transpose(-2, -1))
-                logits_up = torch.matmul(q, mamba_up.transpose(-2, -1))
-                logits_down = torch.matmul(q, mamba_down.transpose(-2, -1))
-
-                weights_left = F.softmax(logits_left, dim=-1)
-                weights_right = F.softmax(logits_right, dim=-1)
-                weights_up = F.softmax(logits_up, dim=-1)
-                weights_down = F.softmax(logits_down, dim=-1)
-
-                attention_left = torch.matmul(weights_left, mamba_left)
-                attention_right = torch.matmul(weights_right, mamba_right)
-                attention_up = torch.matmul(weights_up, mamba_up)
-                attention_down = torch.matmul(weights_down, mamba_down)
-
-                result = attention_left + attention_right + attention_up + attention_down
-                # result = mamba_left + mamba_right + mamba_up + mamba_down
-                
-                updated_audio_video_matrix[:, i, i, :] = result[:, 0, :]
-            
-            diagonals = torch.diagonal(updated_audio_video_matrix, dim1=1, dim2=2)
-            src1 = diagonals.permute(2, 0, 1)
-
-            src2 = self.self_attn(src_q, src_q, src_q, attn_mask=src_mask,
-                                key_padding_mask=src_key_padding_mask)[0] 
-
+        src2 = self.self_attn(src_q, src_q, src_q, attn_mask=src_mask,
+                            key_padding_mask=src_key_padding_mask)[0] 
 
         src_q = src_q + self.dropout11(src1) + self.dropout12(src2)
         src_q = self.norm1(src_q)
@@ -327,24 +244,6 @@ class HANLayer(nn.Module):
         # result_tensor = 0.5*tensor1_expanded + 0.5*tensor2_expanded
         result_tensor = tensor1_expanded * tensor2_expanded
         return result_tensor.to('cuda')
-
-
-    def batch_mamba_scan(self, tensor, i, j):
-        # Assume tensor shape is [batch_size, height, width, depth]
-        batch_size, height, width, depth = tensor.size()
-
-        element_in_second_dim = tensor[:, i, :, :]
-        element_in_third_dim = tensor[:, :, j, :]
-
-        element_left = element_in_second_dim[:, :j+1, :]
-        element_right = element_in_second_dim[:, j:, :]
-        element_right = torch.flip(element_right, dims=[1])
-        
-        element_up = element_in_third_dim[:, :i+1, :]
-        element_down = element_in_third_dim[:, i:, :]
-        element_down = torch.flip(element_down, dims=[1])
-        
-        return element_left, element_right, element_up, element_down
 
     def expand_linear_projection(self, audio, video):
         batch_size, seq_len, feature_dim = audio.shape
@@ -366,34 +265,55 @@ class HANLayer(nn.Module):
         fused = fused_flat.view(batch_size, seq_len, seq_len, -1)
         
         return fused
-    # def efficient_process(self, src_q_mamba, src_v_mamba):
-    #     # Assuming self.expand creates a matrix [16, 10, 10, 512]
-    #     audio_video_matrix = self.expand(src_q_mamba, src_v_mamba)
-    #     batch_size, height, width, dim = audio_video_matrix.size()
 
-    #     # Preparing batched diagonal indices
-    #     # This step assumes that height == width for simplification
-    #     diagonal_indices = torch.arange(height).unsqueeze(0).repeat(batch_size, 1).to(audio_video_matrix.device)
+    def batch_mamba_scan(self, tensor, i, j):
+        # Assume tensor shape is [batch_size, height, width, depth]
+        batch_size, height, width, depth = tensor.size()
 
-    #     # Vectorized extraction of diagonal elements
-    #     diagonals = audio_video_matrix[torch.arange(batch_size).unsqueeze(1), diagonal_indices, diagonal_indices, :]
+        element_in_second_dim = tensor[:, i, :, :]
+        element_in_third_dim = tensor[:, :, j, :]
 
-    #     # Vectorized mamba scan and operation - assuming these methods are adapted for batch processing
-    #     element_left, element_right, element_up, element_down = self.batch_mamba_scan(audio_video_matrix, diagonal_indices, diagonal_indices)
-    #     mamba_results = self.ori_mamba(element_left)  + self.ori_mamba(element_up) #  + self.ori_mamba(element_right) + self.ori_mamba(element_down)
+        element_left = element_in_second_dim[:, :j+1, :]
+        element_right = element_in_second_dim[:, j:, :]
+        element_right = torch.flip(element_right, dims=[1])
+        
+        element_up = element_in_third_dim[:, :i+1, :]
+        element_down = element_in_third_dim[:, i:, :]
+        element_down = torch.flip(element_down, dims=[1])
+        
+        return element_left, element_right, element_up, element_down
 
-    #     # Efficiently updating the diagonals
-    #     # Since direct assignment to diagonals extracted via torch.diagonal is tricky,
-    #     # we loop through each diagonal element for assignment.
-    #     # This could be further optimized if PyTorch supports direct assignment to torch.diagonal() results in the future.
-    #     for i in range(height):
-    #         audio_video_matrix[:, i, i, :] = mamba_results[:, i, :]
 
-    #     # Updated diagonals now reflect the mamba operation results
-    #     updated_diagonals = torch.diagonal(audio_video_matrix, dim1=1, dim2=2)
-    #     src1 = updated_diagonals.permute(2, 0, 1)
+    def efficient_diag_process(self, src_q_mamba, src_v_mamba):
+        # Creating a matrix [16, 10, 10, 512] via self.expand
+        audio_video_matrix = self.expand(src_q_mamba, src_v_mamba)
+        batch_size, height, width, dim = audio_video_matrix.size()
+
+        # Initialize a tensor for storing processed results
+        processed_tensor = audio_video_matrix.clone()
+
+        for i in range(height):
+            # Extract elements using self.batch_mamba_scan for each diagonal position (i, i)
+            element_left, element_right, element_up, element_down = self.batch_mamba_scan(audio_video_matrix, i, i)
+
+            # Since self.ori_mamba operates on [batch_size, *, 512], we ensure compatibility
+            # Assuming self.ori_mamba can handle batches and processes the last dimension (512)
+            mamba_left = self.ori_mamba(element_left)[:, -1:, :]
+            mamba_right = self.ori_mamba(element_right)[:, 0:1, :]  # Adjusted for flipped elements
+            mamba_up = self.ori_mamba(element_up)[:, -1:, :]
+            mamba_down = self.ori_mamba(element_down)[:, 0:1, :]  # Adjusted for flipped elements
+
+            # Combine the results
+            result = mamba_left + mamba_right + mamba_up + mamba_down
+
+            # Update the processed tensor at the diagonal position
+            processed_tensor[:, i, i, :] = result.squeeze(1)  # Remove the singleton dimension
+
+            diagonals = torch.diagonal(processed_tensor, dim1=1, dim2=2)
+            src1 = diagonals.permute(2, 0, 1)
 
         return src1
+
 
 class MMIL_Net(nn.Module):
 
